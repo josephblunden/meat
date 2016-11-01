@@ -7,8 +7,6 @@ include('authentication.php');
 function loginCheck() {
   if($_SESSION['isLoggedin'] == false) {
     header('Location: login.php');
-
-    return false;
   } else {
     return true;
   }
