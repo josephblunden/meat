@@ -122,6 +122,10 @@ fieldset {
   padding: 0;
 }
 
+fieldset label {
+  display: none;
+}
+
 form {
   overflow: hidden;
 }
