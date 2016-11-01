@@ -27,6 +27,5 @@
 <div class="header">
     <div class="skitamix"></div>
     <h2><?php echo $_SESSION['firstname']; ?></h2>
-    <a href="#" class="toggle-overlay">MENU<img src="images/hamburger.svg"></a>
-    <!-- <button class="toggle-overlay">Toggle Me</button> -->
+    <a href="#" class="toggle-overlay open-menu">MENU</a>
   </div>
