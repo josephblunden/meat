@@ -2,17 +2,35 @@
 	include('includes/config.php');
 	loginCheck();
 	include('includes/header.php');
+
+	$today = date("D, F, Y");
 ?>
 
 
 	<div class="timaskraning-container">
 		<div class="timaskraning">
-			<h3>Fimmtudagur 21. október</h3>
-			<ul>
-			<li><input type="radio" name="attending" value="attending" checked> Mætt</li>
-			<li><input type="radio" name="attending" value="attending" checked> Veik</li>
-			<li><input type="radio" name="attending" value="attending" checked> Í leyfi</li>
-			</ul>
+			<h3><?php echo $today ?></h3>
+				<form action="" method="post">
+					<div class="form-check">
+						<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="create_status" value="1">
+								Mætt/ur
+						</label>
+						</div>
+						<div class="form-check">
+						<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="create_status" value="2">
+								Veik/ur
+						</label>
+						</div>
+						<div class="form-check">
+						<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="create_status" value="3">
+								Í leyfi
+						</label>
+					</div>
+					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+				</form>
 		</div>
 	</div>
 
