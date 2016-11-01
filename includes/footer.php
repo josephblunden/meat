@@ -7,7 +7,7 @@
 		  </div>
 		  <nav>
 		    <ul>
-		      <li><a href="createusers.php">Stofna notanda</a></li>
+		      <li><a href="createuser.php">Stofna notanda</a></li>
 		      <li><a href="users.php">Breyta notendum</a></li>
 		      <li><a href="createevent.php">Stofna viðburð</a></li>
 		      <li><a href="#!">About</a></li>

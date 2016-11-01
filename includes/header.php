@@ -25,7 +25,7 @@
 <body>
 
 <div class="header">
-    <button class="toggle-overlay hide-hide">Toggle Me</button>
+    <div class="skitamix"></div>
     <h2><?php echo $_SESSION['firstname']; ?></h2>
     <button class="toggle-overlay">Toggle Me</button>
   </div>

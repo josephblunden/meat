@@ -2,12 +2,17 @@
 	background-color: $primary-color;
 	height: 100px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
+	align-items: center !important;
 }
-button.class-overlay {
-	margin-left: auto;
+.header h2 {
+	margin-right: -20px;
 }
-button.hide-hide {
-	display: none;
+.toggle-overlay {
+	margin-right: 20px;
+	width: 150px;
+}
+.skitamix {
+	height: 1px;
+	width: 150px;
 }
