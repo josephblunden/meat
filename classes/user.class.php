@@ -4,7 +4,7 @@ class User {
  private $_db;
  private $_mysqli;
 
- public function createUsers($username, $password, $firstname, $lastname, $email, $profilePic, $userRole) {
+ public function createUsers($username, $password, $email, $firstname, $lastname, $profilePic, $userRole) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();

@@ -1,7 +1,7 @@
 <?php
 	include('includes/config.php');
 
-	if(false) {
+	if($_SESSION['isLoggedin'] == true) {
 
 		header('Location: dashboard.php');
 
