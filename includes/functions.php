@@ -6,12 +6,13 @@ include('./classes/classes.php');
 		$username = $_POST['create_username'];
 		$password = $_POST['create_password'];
 		$email = $_POST['create_email'];
-		$lastname = $_POST['create_lastname'];
 		$firstname = $_POST['create_firstname'];
+		$lastname = $_POST['create_lastname'];
+		$profilePic = $_POST['create_profile_pic'];
 		$userRole = $_POST['create_user_role'];
 
 		$user = new User();
-		$user->createUsers($username, $password, $email, $firstname, $lastname, $userRole);
+		$user->createUsers($username, $password, $email, $firstname, $lastname, $profilePic, $userRole);
 	}
 	// Geting all the users from user.class.php gettAllUsers()
   function getUsers() {

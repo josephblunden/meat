@@ -4,20 +4,20 @@ class User {
  private $_db;
  private $_mysqli;
 
- public function createUsers($username, $password, $firstname, $lastname, $email, $userRole) {
+ public function createUsers($username, $password, $firstname, $lastname, $email, $profilePic, $userRole) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
  	// prepare and bind
- 	$stmt = $mysqli->prepare("INSERT INTO users(username, password, firstname, lastname, email, user_role_id) VALUES (?, ?, ?, ?, ?, ?)");
- 	$stmt->bind_param("sssssi", $username, $password, $firstname, $lastname, $email, $userRole);
+ 	$stmt = $mysqli->prepare("INSERT INTO users(username, password, firstname, lastname, email, user_role_id, profile_pic) VALUES (?, ?, ?, ?, ?, ?, ?)");
+ 	$stmt->bind_param("ssssssi", $username, $password, $firstname, $lastname, $email, $profilePic, $userRole);
 
  	$stmt->execute();
 
  	$stmt->close();
  	$mysqli->close();
-  header('Location: ./includes/header.php');
+  header('Location: ./dashboard.php');
  }
 
  public function getAllUsers() {
@@ -82,7 +82,7 @@ public function getUserById($userid) {
   return $userArr;
 }
 
-public function updateUser($userid, $firstname, $lastname, $username, $password, $email, $userRole, $profilePic) {
+public function updateUser($firstname, $lastname, $username, $password, $email, $userRole, $profilePic, $userid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
  $mysqli = $db->getConnection();

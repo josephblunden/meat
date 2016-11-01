@@ -16,7 +16,7 @@ class Event {
 
    $stmt->close();
    $mysqli->close();
-   header('Location: ./includes/header.php');
+   header('Location: ./dashboard.php');
   }
   public function getAllEvents() {
     // Connecting to Database
