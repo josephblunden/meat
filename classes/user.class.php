@@ -40,7 +40,7 @@ class User {
       }
 
       echo '<tr>';
-        echo '<th scope="row">' .$userid. '<td><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td>' .$firstname. '</td> <td>' . $lastname.'</td><td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="btn btn-primary btn-sm m-r-1" href="edituser.php?edit=true&userid='.$userid.'"><i class="fa fa-pencil" aria-hidden="true"></i></a><a class="btn btn-danger btn-sm" href="users.php?delete=true&userid='.$userid.'"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+        echo '<th scope="row">' .$userid. '<td><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td>' .$firstname. '</td> <td>' . $lastname.'</td><td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
       echo '</tr>';
     }
 

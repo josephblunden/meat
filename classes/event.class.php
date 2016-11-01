@@ -30,7 +30,7 @@ class Event {
      while ($stmt->fetch()) {
 
        echo '<tr>';
-         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="btn btn-primary btn-sm m-r-1" href="editevent.php?edit=true&eventid='.$eventid.'"><i class="fa fa-pencil" aria-hidden="true"></i></a><a class="btn btn-danger btn-sm" href="events.php?delete=true&eventid='.$eventid.'"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a></td>';
        echo '</tr>';
      }
 
