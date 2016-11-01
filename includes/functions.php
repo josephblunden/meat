@@ -35,4 +35,21 @@ function getEvents() {
 	$alluser = new Event();
 	$alluser->getAllEvents();
 }
+
+
+//---------------------   Attending ---------------------------------
+
+$_POST['todayTime'] = date("F j, Y, g:i a");
+if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
+	$status = $_POST['create_status'];
+	$statusTime = $_POST['todayTime'];
+	$event = new Attend();
+	$event->createNewAttendance($status, $statusTime);
+}
+function getAttend() {
+	$alluser = new Attend();
+	$alluser->getAllAttendance();
+}
+
+
 ?>
