@@ -10,7 +10,7 @@ class User {
   $mysqli = $db->getConnection();
 
  	// prepare and bind
- 	$stmt = $mysqli->prepare("INSERT INTO users(username, password, firstname, lastname, email, user_role_id, profile_pic) VALUES (?, ?, ?, ?, ?, ?, ?)");
+ 	$stmt = $mysqli->prepare("INSERT INTO users(username, password, firstname, lastname, email, profile_pic, user_role_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
  	$stmt->bind_param("ssssssi", $username, $password, $firstname, $lastname, $email, $profilePic, $userRole);
 
  	$stmt->execute();
