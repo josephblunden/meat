@@ -22,24 +22,30 @@
 
 		<?php endif; ?>
 
-		<h1 >Login</h1>
+		<div class="logo">
+			<img src="images/logo.svg">
+		</div>
 
-		<form action="" method="post">
-			<div class="form-group">
-				<label for="username">Username</label>
-				<input type="text" class="form-control" name="username" value="">
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" class="form-control" name="password" value="">
-			</div>
-			<div class="form-group">
-				<input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
-			</div>
-			<div class="">
-				<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
-			</div>
-		</form>
+		<div class="login">
+			<form action="" method="post">
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" class="form-control" name="username" value="">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" name="password" value="">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
+				</div>
+				<div class="">
+					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
+				</div>
+			</form>
+		</div>
+
+		
 	</div>
 </div><!-- end row -->
 </div><!-- end container -->
