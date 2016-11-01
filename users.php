@@ -17,7 +17,7 @@
 
 		$user = new User();
 
-		$user->updateUser($userid, $firstname, $lastname, $username, $password, $email, $userRole, $profilePic);
+		$user->updateUser($firstname, $lastname, $username, $password, $email, $userRole, $profilePic, $userid);
 	}
 
 	//Check if parameter exists and is set to true

@@ -30,6 +30,10 @@
 						<label for="create_lastname">Last name</label>
 						<input type="text" class="form-control" name="create_lastname" value="">
 					</div>
+					<div class="form-group">
+						<label for="create_profile_pic">Profile pic path</label>
+						<input type="text" class="form-control" name="create_profile_pic" value="">
+					</div>
 					<fieldset class="form-group">
 						<div class="form-check">
 							<label class="form-check-label">
