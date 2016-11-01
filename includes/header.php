@@ -7,6 +7,7 @@
   <meta name="description" content="Mætarinn">
   <meta name="author" content="Brynjar, Eyþór, Valdís">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="styles/main.css">
 
@@ -22,3 +23,9 @@
 </head>
 
 <body>
+
+<div class="header">
+    <button class="toggle-overlay hide-hide">Toggle Me</button>
+    <h2><?php echo $_SESSION['firstname']; ?></h2>
+    <button class="toggle-overlay">Toggle Me</button>
+  </div>
