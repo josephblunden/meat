@@ -1,0 +1,21 @@
+@import 'partials/reset';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
+
+$primary-color: #FFE400;
+$secondary-color: #F3F5EF;
+$font: 'Raleway', sans-serif;
+
+body {
+	background-color: $secondary-color;
+}
+p, h1 {
+	font-family: $font;
+}
+
+@import 'partials/typography';
+
+@import 'partials/header';
+@import 'partials/login';
+@import 'partials/timaskraning';
+@import 'partials/vidburdir';
+@import 'partials/vidburdurstakur';

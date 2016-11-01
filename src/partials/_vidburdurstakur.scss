@@ -1,0 +1,69 @@
+.vidburdur-stakur-info-container {
+	display: flex;
+	background-color: white;
+	justify-content: center;
+}
+.vidburdur-stakur-info {
+	width: 50%;
+	padding: 20px 0;
+	justify-content: center;
+}
+.vidburdur-stakur-info img {
+	max-width: 100%;
+}
+
+
+
+// .vidburdir-card-container {
+// 	display:flex;
+// 	justify-content: space-between;
+// 	flex-wrap: wrap;
+// }
+
+
+
+aside {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: $primary-color;
+	transition: all .5s ease;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+}
+.open {
+	opacity: 1;
+	visibility: visible;
+}
+.close {
+	position: fixed;
+	top: 40px;
+	right: 60px;
+	color: white;
+	z-index: 3;
+	cursor: pointer;
+	font-family: sans-serif;
+  span,
+  span:before,
+  span:after {
+    border-radius: 4px;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+  }
+  span {
+    background: transparent;
+  }
+  span:before {
+  transform: rotate(45deg);
+  }
+  span:after {
+  transform: rotate(-45deg);
+  }
+}
