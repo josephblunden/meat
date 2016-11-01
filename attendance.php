@@ -12,7 +12,7 @@
 
 		$user = new Attend();
 
-		$user->updateAttendance($status, $statusTime);
+		$user->updateAttendance($status, $statusTime, $attendid);
 	}
 
 	//Check if parameter exists and is set to true

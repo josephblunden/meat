@@ -18,7 +18,7 @@
 				<form action="attendance.php?update=true" method="post">
 					<div class="form-group">
 						<label for="update_status_time">Time</label>
-						<input type="datetime-local" class="form-control" name="update_status_time" value="<?php echo $attendInfo['status_time']; ?>">
+						<input type="text" class="form-control" name="update_status_time" value="<?php echo $attendInfo['status_time']; ?>">
 					</div>
 				    <div class="form-check">
 				      <label class="form-check-label">

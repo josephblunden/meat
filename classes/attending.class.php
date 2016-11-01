@@ -17,6 +17,7 @@ class Attend {
  	$stmt->close();
  	$mysqli->close();
   header('Location: ./dashboard.php');
+
  }
 
  public function getAllAttendance() {
@@ -79,19 +80,18 @@ public function getAttendanceById($attendid) {
   return $attendArr;
 }
 
-public function updateAttendance($status, $statusTime) {
+public function updateAttendance($status, $statusTime, $attendid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
  $mysqli = $db->getConnection();
 
  // prepare and bind
  $stmt = $mysqli->prepare("UPDATE checkin SET status=?, status_time=? WHERE id=?");
- $stmt->bind_param("is", $status, $statusTime);
+ $stmt->bind_param("isi", $status, $statusTime, $attendid);
  $stmt->execute();
 
  // $stmt->close();
  // $mysqli->close();
- // unset($mysqli);
  //header('Location: ./users.php?updated=true');
 }
 
