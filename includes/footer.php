@@ -32,6 +32,7 @@
 		</aside>
     </footer>
   </body>
+
   <script>
 	(function($) {
 	  $(function() {
@@ -41,4 +42,5 @@
 	  });
 	})(jQuery);
 </script>
+
 </html>
