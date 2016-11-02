@@ -18,10 +18,21 @@
 			    </ul>
 			  </nav>
 		  </div>
-		</aside>
 
+		  <nav>
+		    <ul>
+		      <li><a href="createuser.php">Stofna notanda</a></li>
+		      <li><a href="users.php">Breyta notendum</a></li>
+		      <li><a href="createevent.php">Stofna viðburð</a></li>
+		      <li><a href="#!">About</a></li>
+          <li><a href="login.php?logout=true">Signout</a></li>
+		    </ul>
+		  </nav>
+
+		</aside>
     </footer>
   </body>
+
   <script>
 	(function($) {
 	  $(function() {
@@ -31,4 +42,5 @@
 	  });
 	})(jQuery);
 </script>
+
 </html>
