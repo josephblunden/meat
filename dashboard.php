@@ -10,7 +10,8 @@
 	<div class="timaskraning-container">
 		<div class="timaskraning">
 			<h3><?php echo $today ?></h3>
-				<form action="" method="post">
+			<?php if ($GLOBALS['status'] == 0) { ?>
+				<form action="" method="POST">
 					<div class="form-check">
 						<label class="form-check-label">
 								<input type="radio" class="form-check-input" name="create_status" value="1">
@@ -29,8 +30,14 @@
 								Í leyfi
 						</label>
 					</div>
-					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+					<input type="submit" class="btn btn-primary btn-lg btn-block" name="Submit" value="Submit">
 				</form>
+				<?php
+				    }
+				    else {
+				        // form engine
+				        echo "<div>Greiðslan hefur verið gjaldfærð af reykningi yðar</div>";
+				    } ?>
 		</div>
 	</div>
 
