@@ -142,7 +142,6 @@ aside {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 20px;
 }
 
 .open {
@@ -159,6 +158,10 @@ aside {
 .menu-haegri {
   width: 30%;
   background: #FFE400;
+}
+
+.menu-haegri nav {
+  padding-right: 20px;
 }
 
 .close {
