@@ -61,6 +61,7 @@ table {
 
 body {
   background-color: #F3F5EF;
+  font-family: "Raleway", sans-serif;
 }
 
 p, h1 {
@@ -142,7 +143,6 @@ aside {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 20px;
 }
 
 .open {
@@ -159,6 +159,10 @@ aside {
 .menu-haegri {
   width: 30%;
   background: #FFE400;
+}
+
+.menu-haegri nav {
+  padding-right: 20px;
 }
 
 .close {
@@ -212,6 +216,11 @@ aside nav ul li a.close {
   padding: 0px;
   margin-top: -13px;
   margin-bottom: 50px;
+}
+
+.menu-signout {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .logo {
@@ -291,6 +300,52 @@ form {
 .timaskraning {
   width: 50%;
   padding: 20px 0;
+}
+
+.timaskraning-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-check {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.form-check:last-of-type {
+  margin-right: 0px;
+}
+
+.form-check-maeting {
+  width: 50%;
+}
+
+.form-check-leyfi, .form-check-veikindi {
+  width: 25%;
+}
+
+.form-check button {
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid #979797;
+  padding: 10px;
+  display: table;
+  width: 100%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-check button:hover {
+  background-color: #F3F5EF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .vidburdir-yfirlit-container {

@@ -46,7 +46,6 @@ aside {
 	visibility: hidden;
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 20px;
 }
 .open {
 	opacity: 1;
@@ -60,6 +59,9 @@ aside {
 .menu-haegri {
 	width: 30%;
 	background: $primary-color;
+}
+.menu-haegri nav {
+	padding-right: 20px;
 }
 .close {
 	// position: fixed;
@@ -124,4 +126,7 @@ aside nav ul li a.close {
 	padding: 0px;
 	margin-top: -13px;
 	margin-bottom: 50px;
+}
+.menu-signout {
+	align-self: flex-end;
 }

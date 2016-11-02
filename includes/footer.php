@@ -10,8 +10,10 @@
 			      <li><a href="createuser.php">Stofna notanda</a></li>
 			      <li><a href="users.php">Breyta notendum</a></li>
 			      <li><a href="createevent.php">Stofna viðburð</a></li>
-			      <li><a href="login.php?logout=true">Signout</a></li>
 			    </ul>
+			  </nav>
+			  <nav class="menu-signout">
+			  	<li class="menu-signout"><a href="login.php?logout=true">Signout</a></li>
 			  </nav>
 		  </div>
 
