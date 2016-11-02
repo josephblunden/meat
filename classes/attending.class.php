@@ -16,7 +16,7 @@ class Attend {
 
  	$stmt->close();
  	$mysqli->close();
-  header('Location: ./dashboard.php');
+  //header('Location: ./dashboard.php');
 
  }
 
