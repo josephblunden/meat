@@ -4,10 +4,6 @@
 		<aside>
 		<div class="menu-vinstri"></div>
 		<div class="menu-haegri">
-			  <!-- <div class="outer-close toggle-overlay">
-			    <a class="close"><span></span></a>
-			    <a class="close open-menu">CLOSE</a>
-			  </div> -->
 			  <nav>
 			    <ul>
 			    <li class="ofar"><a class="outer-close toggle-overlay close">CLOSE</a></li>
