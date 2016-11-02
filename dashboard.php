@@ -11,26 +11,30 @@
 		<div class="timaskraning">
 			<h3><?php echo $today ?></h3>
 			<?php if ($GLOBALS['status'] == 0) { ?>
-				<form action="" method="POST">
-					<div class="form-check">
+				<form class="timaskraning-form" action="" method="POST">
+					<div class="form-check form-check-maeting">
 						<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="create_status" value="1">
+								<button type="radio" class="form-check-input" name="create_status" value="1">
 								Mætt/ur
+								</button>
 						</label>
 						</div>
-						<div class="form-check">
+						<div class="form-check form-check-veikindi">
 						<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="create_status" value="2">
+								<button type="radio" class="form-check-input" name="create_status" value="2">
 								Veik/ur
+								</button>
 						</label>
 						</div>
-						<div class="form-check">
+						<div class="form-check form-check-leyfi">
 						<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="create_status" value="3">
+								<button type="radio" class="form-check-input" name="create_status" value="3">
 								Í leyfi
+								</button>
+
 						</label>
 					</div>
-					<input type="submit" class="btn btn-primary btn-lg btn-block" name="Submit" value="Submit">
+					<!-- <input type="submit" class="btn btn-primary btn-lg btn-block" name="Submit" value="Submit"> -->
 				</form>
 				<?php
 				    }
@@ -40,5 +44,7 @@
 				    } ?>
 		</div>
 	</div>
+
+
 
 <?php include('includes/footer.php')  ?>
