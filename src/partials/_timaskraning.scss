@@ -7,3 +7,38 @@
 	width: 50%;
 	padding: 20px 0;
 }
+
+.timaskraning-form {
+	display: flex;
+	justify-content: space-between;
+}
+.form-check {
+	margin-top: 20px;
+	margin-right: 10px;
+}
+.form-check:last-of-type {
+	margin-right: 0px;
+}
+.form-check-maeting {
+	width: 50%;
+}
+.form-check-leyfi, .form-check-veikindi {
+	width: 25%;
+}
+.form-check button {
+	border-radius: 50px;
+	background-color: white;
+	border: 1px solid $grar;
+	padding: 10px;
+	display: table;
+	width: 100%;
+	transition: all .5s ease;
+	font-family: $font;
+	font-size: 18px;
+	font-weight: 700;
+}
+.form-check button:hover {
+	background-color: $secondary-color;
+	transition: all .5s ease;
+
+}

@@ -3,10 +3,12 @@
 
 $primary-color: #FFE400;
 $secondary-color: #F3F5EF;
+$grar: #979797;
 $font: 'Raleway', sans-serif;
 
 body {
 	background-color: $secondary-color;
+	font-family: $font;
 }
 p, h1 {
 	font-family: $font;
