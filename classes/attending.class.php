@@ -55,14 +55,14 @@ class Attend {
 
  }
 // Get all user info from user table by user_id
-public function getAttendanceById($attendid) {
+public function getAttendanceById($userid) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("SELECT status, status_time FROM checkin	WHERE id = ?");
-   $stmt->bind_param('i', $attendid);
+   $stmt = $mysqli->prepare("SELECT status, status_time FROM checkin	WHERE user_id = ?");
+   $stmt->bind_param('i', $userid);
    $stmt->execute();
    $stmt->bind_result( $status, $statusTime);
 

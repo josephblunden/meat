@@ -20,6 +20,7 @@ if(isset($_GET['logout']) && 'true' == $_GET['logout']) {
 
   // destroy the session
   session_destroy();
+	header('Location: login.php');
 }
 
 
