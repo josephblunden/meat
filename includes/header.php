@@ -24,8 +24,16 @@
 
 <body>
 
- <div class="header">
+
+<?php 
+  if (!stripos($_SERVER['REQUEST_URI'], 'login.php')) {
+    echo '<div class="header">
     <div class="skitamix"></div>
-    <h2><?php echo $_SESSION['firstname']; ?></h2>
+    <h2>'.$_SESSION['firstname'].'</h2>
     <a href="#" class="toggle-overlay open-menu">MENU</a>
-  </div>
+  </div>';
+  }
+?>
+
+
+
