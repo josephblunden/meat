@@ -3,14 +3,14 @@ class Attend {
  private $_db;
  private $_mysqli;
 
- public function createNewAttendance($status, $statusTime) {
+ public function createNewAttendance($userid, $status, $statusTime) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
  	// prepare and bind
- 	$stmt = $mysqli->prepare("INSERT INTO checkin(status, status_time) VALUES(?, ?)");
- 	$stmt->bind_param("is", $status, $statusTime);
+ 	$stmt = $mysqli->prepare("INSERT INTO checkin(user_id, status, status_time) VALUES(?, ?, ?)");
+ 	$stmt->bind_param("iis", $userid, $status, $statusTime);
 
  	$stmt->execute();
 
@@ -20,13 +20,13 @@ class Attend {
 
  }
 
- public function getAllAttendance() {
+ public function getAllAttendance($userid) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
 
   	// prepare and bind
-  	$stmt = $mysqli->prepare("SELECT id, status, status_time FROM checkin");
+  	$stmt = $mysqli->prepare("SELECT id, status, status_time FROM checkin WHERE user_id=$userid");
     $stmt->execute();
     $stmt->bind_result($attendid, $status, $statusTime);
 
