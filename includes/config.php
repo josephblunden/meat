@@ -11,6 +11,14 @@ function loginCheck() {
     return true;
   }
 }
+function loginSuperCheck() {
+  if($_SESSION['isLoggedin'] == false || $_SESSION['user_role_id'] != 1) {
+
+    header('Location: dashboard.php');
+  } else {
+    return true;
+  }
+}
 
 if(isset($_GET['logout']) && 'true' == $_GET['logout']) {
   $_SESSION['isLoggedin'] = false;
