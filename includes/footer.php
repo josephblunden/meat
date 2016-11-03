@@ -22,13 +22,7 @@
   </body>
 
   <script>
-  	(function($) {
-  	  $(function() {
-  	    $('.toggle-overlay').click(function() {
-  	      $('aside').toggleClass('open');
-  	    });
-  	  });
-  	})(jQuery);
+
   </script>
   <script src="js/script.js"></script>
 

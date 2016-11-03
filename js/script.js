@@ -14,17 +14,28 @@
   //   }
   // });
   $(document).ready(function() {
+    (function($) {
+      $(function() {
+        $('.toggle-overlay').click(function() {
+          $('aside').toggleClass('open');
+        });
+      });
+    })(jQuery);
+
+
       $('#userCalendar').fullCalendar({
           googleCalendarApiKey: 'AIzaSyBiWG_Zp8Fmm8-kUaJRzGkYEGBzzH-X97s',
           events: {
               googleCalendarId: '0atlgl77nu11vhb4u4pb253bbc@group.calendar.google.com'
           },
           weekends: false,
-          header: false,
-          default: {
-          left:   'title',
-          center: '',
-          right:  'today prev,next'
+          header: {
+
+            left:   'title',
+            center: '',
+            right:  'today prev,next'
+
           }
       });
+      $('.fc-button').show();
   });

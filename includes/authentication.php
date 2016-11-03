@@ -10,14 +10,15 @@ function loginUserCheck($username, $password){
   $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("SELECT username, password, firstname, id FROM users");
+   $stmt = $mysqli->prepare("SELECT username, password, firstname, id, user_role_id FROM users");
    $stmt->execute();
-   $stmt->bind_result($_username, $_password, $_firstname, $_userid);
+   $stmt->bind_result($_username, $_password, $_firstname, $_userid, $_userRoleId);
    while ($stmt->fetch()) {
      if ($username == $_username && $password == $_password) {
       $_SESSION['isLoggedin'] = true;
 			$_SESSION['firstname'] = $_firstname;
 			$_SESSION['userid'] = $_userid;
+			$_SESSION['user_role_id'] = $_userRoleId;
        header('Location: dashboard.php');
        break;
      }  else {

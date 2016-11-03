@@ -1,7 +1,7 @@
 <?php
 	include('includes/config.php');
-	loginCheck();
-
+	//loginCheck();
+	loginSuperCheck();
 	include('includes/header.php');
 
 	//Check if parameter exists and is set to true
@@ -21,8 +21,10 @@
 
 		$attend = new Attend();
 		$attend->deleteAttendance($attendid);
-	}
+	};
+	var_dump($_SESSION['user_role_id']);
 ?>
+
 <div class="container-fluid">
 		<div class="col-md-9 p-a-3">
 			<div class="row">
