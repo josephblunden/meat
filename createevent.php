@@ -22,6 +22,10 @@
 						<label for="create_event_desc">Lýsing á Viðburði</label>
 						<input type="text" class="form-control" name="create_event_desc" value="">
 					</div>
+					<div class="form-group">
+						<label for="create_event_location">Staðsetning</label>
+						<input type="text" class="form-control" name="create_event_location" value="">
+					</div>
 					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Create Event">
 				</form>
 			</div>
