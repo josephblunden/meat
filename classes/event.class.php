@@ -30,7 +30,7 @@ class Event {
      while ($stmt->fetch()) {
 
        echo '<tr>';
-         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a></td>';
+         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a><a class="one-button-a" href="oneevent.php?one=true&eventid='.$eventid.'"><button class="one-button">Show</button></i></a>';
        echo '</tr>';
      }
 
@@ -68,6 +68,7 @@ class Event {
    $mysqli->close();
    return $eventArr;
  }
+
 
  public function updateEvents($eventid, $tilte, $eventDate, $description, $author) {
   // Connecting to Database
