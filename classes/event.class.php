@@ -58,7 +58,7 @@ class Event {
     while ($stmt->fetch()) {
       $eventArr['eventid'] = $eventid;
       $eventArr['title'] = $tilte;
-      $eventArr['event_date'] = $eventDate;
+      $eventArr['eventDate'] = $eventDate;
       $eventArr['description'] = $description;
       $eventArr['author'] = $author;
     }
