@@ -26,9 +26,10 @@ if(isset($_POST['create_event_name']) && !empty($_POST['create_event_name'])) {
 	$eventName = $_POST['create_event_name'];
 	$eventDate = $_POST['create_event_date'];
 	$eventDesc = $_POST['create_event_desc'];
-	$authorName = $_SESSION['firstname']['lastname'];
+	$authorFirstName = $_SESSION['firstname'];
+	$authorFirstName = $_SESSION['lastname'];
 	$event = new Event();
-	$event->createEvent($eventName, $eventDate, $eventDesc, $authorName);
+	$event->createEvent($eventName, $eventDate, $eventDesc, $authorFirstName, $authorFirstName);
 }
 // Geting all the users from user.class.php gettAllUsers()
 function getEvents() {
