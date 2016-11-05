@@ -11,9 +11,10 @@
 		$eventDate = $_POST['update_event_date'];
 		$description = $_POST['update_description'];
 		$author = $_POST['update_author'];
+		$location = $_POST['update_location'];
 
 		$event = new Event();
-		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author);
+		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author, $location);
 	}
 
 	//Check if parameter exists and is set to true
@@ -39,7 +40,7 @@
 						</div>
 					<?php endif; ?>
 					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Title</th> <th>Event Date</th> <th>Description</th><th>author</th></tr> </thead>
+						<thead> <tr> <th>#</th> <th>Titill</th> <th>Dagsettning</th> <th>Lýsing</th><th>Staðsettning</th><th>Höfundur</th></tr> </thead>
 						<tbody>
 							<?php getEvents(); ?>
 						</tbody>
