@@ -27,7 +27,7 @@
     echo '<div class="header">
     <div class="skitamix"></div>
     <h2>'.$_SESSION['firstname'].'</h2>
-    <a href="#" class="toggle-overlay open-menu">MENU</a>
+    <a href="#" class="toggle-overlay open-menu">VALMYND</a>
   </div>';
   }
 ?>

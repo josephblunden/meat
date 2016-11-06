@@ -59,6 +59,7 @@ aside {
 .menu-haegri {
 	width: 30%;
 	background: $primary-color;
+	position: relative;
 }
 .menu-haegri nav {
 	padding-right: 20px;
@@ -128,5 +129,16 @@ aside nav ul li a.close {
 	margin-bottom: 50px;
 }
 .menu-signout {
-	align-self: flex-end;
+	// align-self: flex-end;
+	position: fixed;
+	right: 20px;
+	bottom: 40px;
+	font-size: 14px;
+}
+.menu-signout-username {
+	font-size: 14px;
+	margin-bottom: 15px;
+	padding-right: 0px !important;
+	text-align: right;
+	font-weight: 400;
 }

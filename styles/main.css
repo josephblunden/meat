@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -159,6 +159,7 @@ aside {
 .menu-haegri {
   width: 30%;
   background: #FFE400;
+  position: relative;
 }
 
 .menu-haegri nav {
@@ -219,8 +220,18 @@ aside nav ul li a.close {
 }
 
 .menu-signout {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  font-size: 14px;
+}
+
+.menu-signout-username {
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding-right: 0px !important;
+  text-align: right;
+  font-weight: 400;
 }
 
 .logo {
@@ -346,6 +357,31 @@ form {
   background-color: #F3F5EF;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+}
+
+.timaskraning-yfirlit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timaskraning-yfirlit-faersla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid #c5c5c5;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+
+.timaskraning-maett {
+  color: green;
 }
 
 .vidburdir-yfirlit-container {
