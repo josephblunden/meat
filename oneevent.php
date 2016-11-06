@@ -25,4 +25,13 @@
 		</div>
 	</div>
 </div>
+
+<form method='POST'>
+		<input type='hidden' name='date_time' value='".date('d-m-y H:i:s')."'>
+		<textarea name='comments'></textarea><br>
+		<button type='submit' name='commentSubmit'>Comment</button>
+	</form>
+
+
+
 <?php include('includes/footer.php')  ?>
