@@ -74,6 +74,7 @@ public function getUserById($userid) {
      $userArr['email'] = $email;
      $userArr['user_role_id'] = $userRole;
      $userArr['profile_pic'] = $profilePic;
+     $userArr['userid'] = $userID;
    }
 
   // Close connection
