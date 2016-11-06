@@ -1,27 +1,25 @@
 
 <?php
 	include('config.php');
-	include('comments.php');
 
 	include('header.php');
+
+	if(isset($_GET['edit']) && $_GET['edit'] == 'true') {
+		$commentID = $_GET['commentID'];
+		$comment = new Comment();
+		$commentInfo = $event->getCommentsById($commentID);
+	};
 	?>
-<body>
-  <?php
-    $events_id = $_POST['events_id'];
-    $id = $_POST['id'];
-    $users_id = $_POST['users_id'];
-    $date_time = $_POST['date_time'];
-    $comments = $_POST['comments'];
 
-  echo "<form method='POST' action='../createevent.php'>
-  		<input type='hidden' name='id' value='".$id."'>
-  		<input type='hidden' name='users_id' value='".$users_id."'>
-  		<input type='hidden' name='date_time' value='".$date_time."'>
-  		<textarea name='comments'>".$comments."</textarea><br>
+
+  <form method='POST' action='../createcomment.php'>
+  		<input type='hidden' name='commentID' value='<?php echo $commentInfo['commentID']; ?>'>
+  		<input type='hidden' name='users_id' value='<?php echo $commentInfo['userID']; ?>'>
+  		<input type='hidden' name='date_time' value='<?php echo $commentInfo['dateTime']; ?>'>
+  		<textarea name='comments'><?php echo $commentInfo['comments']; ?></textarea><br>
   		<button type='submit' name='commentSubmit'>Edit</button>
-  	</form>";
+  	</form>
 
-  ?>
-</body>
+
 
 <?php include('footer.php')  ?>

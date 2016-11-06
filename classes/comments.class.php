@@ -25,25 +25,25 @@ public function getAllComments(){
   $mysqli = $db->getConnection();
 
 
-	$stmt = $mysqli->prepare("SELECT * FROM comments ORDER BY id DESC");
+	$stmt = $mysqli->prepare("SELECT user_id, events_id, date_time, comments, id FROM comments ORDER BY id DESC");
   $stmt->execute();
-
-	while ($row = $stmt->fetch()) {
+  $stmt->bind_result($userID, $eventsID, $dateTime, $comments, $commentID, );
+	while ($stmt->fetch()) {
 		echo "<div class='comment-box'><p>";
-		echo $row['users_id']."<br>";
-		echo $row['date_time']."<br>";
-		echo nl2br($row['comments']);
+		echo $userID."<br>";
+		echo $dateTime."<br>";
+		echo nl2br($comments);
 		echo "</p>
 				<form class='delete-form' method='POST' action='".deleteComments()."'>
-					<input type='hidden' name='id' value='".$row['id']."'>
+					<input type='hidden' name='id' value='".$commentID."'>
 					<button name='commentDelete'>Delete</button>
 				</form>
 
 				<form class='edit-form' method='POST' action='editcomment.php'>
-					<input type='hidden' name='id' value='".$row['id']."'>
-					<input type='hidden' name='users_id' value='".$row['users_id']."'>
-					<input type='hidden' name='date_time' value='".$row['date_time']."'>
-					<input type='hidden' name='comments' value='".$row['comments']."'>
+					<input type='hidden' name='id' value='".$commentID."'>
+					<input type='hidden' name='users_id' value='".$userID."'>
+					<input type='hidden' name='date_time' value='".$dateTime."'>
+					<input type='hidden' name='comments' value='".$comments."'>
 					<button>Edit</button>
 				</form>
 
@@ -52,46 +52,63 @@ public function getAllComments(){
 
 }
 
-function editComments($commentID) {
+// Get all user info from user table by user_id
+public function getCommentsById($commentID) {
+  // Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
-	if(isset($_POST['commentSubmit'])){
-		$events_id = $_POST['events_id'];
-		$users_id = $_POST['users_id'];
-		$date_time = $_POST['date_time'];
-		$comments = $_POST['comments'];
+   // prepare and bind
+   $stmt = $mysqli->prepare("SELECT user_id, events_id, date_time, comments FROM comments	WHERE id =?");
+   $stmt->bind_param('i', $commentID);
+   $stmt->execute();
+   $stmt->bind_result($userID, $eventID, $dateTime, $comments);
 
-		$stmt = $mysqli->prepare("UPDATE comments SET comments='$comments' WHERE id='$commentID'");
-    $stmt->execute();
-		header("Location: ./oneevent.php");
-	}
+   // Only returning info from 1 user so I will create an array that I can easily work with on my page
+   $commentArr;
+   while ($stmt->fetch()) {
+     $commentArr['userID'] = $userID;
+     $commentArr['eventID'] = $eventID;
+     $commentArr['dateTime'] = $dateTime;
+     $commentArr['comments'] = $comments;
+     $commentArr['commentID'] = $commentID;
+   }
 
+  // Close connection
+  $stmt->close();
+  $mysqli->close();
+  return $commentArr;
+}
+
+public function updateComments($comments, $dateTime, $commentID) {
+ // Connecting to Database
+ $db = $GLOBALS['gdb'];
+ $mysqli = $db->getConnection();
+
+ // prepare and bind
+ $stmt = $mysqli->prepare("UPDATE comments SET comments=?, date_time=? WHERE id=?");
+ $stmt->bind_param("ssi", $comments, $dateTime, $commentID);
+ $stmt->execute();
+
+ // $stmt->close();
+ // $mysqli->close();
+ //header('Location: ./users.php?updated=true');
 }
 
 
-function deleteComments($commentID) {
+function deleteComment($commentID) {
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
-	if(isset($_POST['commentDelete'])){
-		$commentID = $_POST['id'];
-
-		$stmt = $mysqli->prepare("DELETE FROM comments WHERE id=?");
+		$stmt = $mysqli->prepare("DELETE FROM comments WHERE id=? LIMIT 1");
     $stmt->bind_param("i", $commentID);
 	  $stmt->execute();
-		header("Location: ./oneevent.php");
+		//header("Location: ./.php");
 }
 }
 
 
 }
-// if(isset($_POST['commentSubmit'])){
-// editComments($commentID);
-// }
-//
-// if(isset($_POST['commentDelete'])){
-// 	deleteComments($commentID);
-// }
+
 
 ?>

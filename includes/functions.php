@@ -50,7 +50,7 @@ if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 }
 function getAttend() {
 	$alluser = new Attend();
-	$alluser->getAllAttendance($_SESSION['userid']);
+	$alluser->getAllAttendance();
 }
 
 
@@ -60,12 +60,11 @@ if(isset($_POST['commentSubmit'])){
 	$events_id = $_GET['eventid'];
 	$date_time = $_POST['todayTime'];
 	$comments = $_POST['comments'];
-	error_log($event_id);
 	$comment = new Comment();
 	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
 }
 function getComments() {
-	$alluser = new Attend();
+	$alluser = new Comment();
 	$alluser->getAllComments($GLOBALS['eventid']);
 }
 ?>
