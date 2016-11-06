@@ -42,3 +42,18 @@
 	transition: all .5s ease;
 
 }
+
+.timaskraning-yfirlit-container {
+	display: flex;
+	justify-content: center;
+}
+.timaskraning-yfirlit-faersla {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid #c5c5c5;
+	margin-bottom: 14px;
+	padding-bottom: 10px;
+}
+.timaskraning-maett {
+	color: green;
+}
