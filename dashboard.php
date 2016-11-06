@@ -40,8 +40,23 @@
 				    }
 				    else {
 				        // form engine
-				        echo "<div>Greiðslan hefur verið gjaldfærð af reykningi yðar</div>";
+				        echo "<p>Þú ert búin að skrá mætinguna þína.</p>";
 				    } ?>
+		</div>
+	</div>
+
+	<div class="timaskraning-yfirlit-container">
+		<div class="timaskraning">
+			<ul>
+				<li class="timaskraning-yfirlit-faersla">
+					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
+					<p class="timaskraning-yfirlit-haegri timaskraning-maett">Mætt</p>
+				</li>
+				<li class="timaskraning-yfirlit-faersla">
+					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
+					<p class="timaskraning-yfirlit-haegri timaskraning-leyfi">Í leyfi</p>
+				</li>
+			</ul>
 		</div>
 	</div>
 
