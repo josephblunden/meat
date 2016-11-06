@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/jquery.modal.js"></script>
   <script src="js/moment.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/gcal.js"></script>
@@ -31,3 +32,6 @@
   </div>';
   }
 ?>
+
+
+<!-- if supercheck == true þá -->
