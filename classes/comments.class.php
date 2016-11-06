@@ -25,27 +25,23 @@ public function getAllComments(){
   $mysqli = $db->getConnection();
 
 
-	$stmt = $mysqli->prepare("SELECT user_id, events_id, date_time, comments, id FROM comments ORDER BY id DESC");
+	$stmt = $mysqli->prepare("SELECT users_id, events_id, date_time, comments, id FROM comments ORDER BY id DESC");
   $stmt->execute();
-  $stmt->bind_result($userID, $eventsID, $dateTime, $comments, $commentID, );
+  $stmt->bind_result($userID, $eventsID, $dateTime, $comments, $commentID);
 	while ($stmt->fetch()) {
 		echo "<div class='comment-box'><p>";
-		echo $userID."<br>";
+		echo $userID;
 		echo $dateTime."<br>";
-		echo nl2br($comments);
+		echo "<p>".$comments;
 		echo "</p>
-				<form class='delete-form' method='POST' action='".deleteComments()."'>
-					<input type='hidden' name='id' value='".$commentID."'>
-					<button name='commentDelete'>Delete</button>
-				</form>
+      <div class'buttons buttons-comments'>
+      <a class='edit-button-a' href='editcomment.php?edit=true&commentID=".$commentID."'>
+      <button class='edit-button'>Edit</button></a>
+      <a class='delete-button-a' href='oneevent.php?delete=true&commentID=".$commentID."'>
+      <button class='delete-button'>Delete</button></a>
+      </div>
 
-				<form class='edit-form' method='POST' action='editcomment.php'>
-					<input type='hidden' name='id' value='".$commentID."'>
-					<input type='hidden' name='users_id' value='".$userID."'>
-					<input type='hidden' name='date_time' value='".$dateTime."'>
-					<input type='hidden' name='comments' value='".$comments."'>
-					<button>Edit</button>
-				</form>
+
 
 		</div>";
 	};
@@ -100,7 +96,7 @@ function deleteComment($commentID) {
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
-		$stmt = $mysqli->prepare("DELETE FROM comments WHERE id=? LIMIT 1");
+		$stmt = $mysqli->prepare("DELETE FROM comments WHERE id=?");
     $stmt->bind_param("i", $commentID);
 	  $stmt->execute();
 		//header("Location: ./.php");
@@ -108,7 +104,7 @@ function deleteComment($commentID) {
 }
 
 
-}
+
 
 
 ?>

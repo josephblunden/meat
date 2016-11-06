@@ -1,8 +1,9 @@
 
 <?php
-	include('config.php');
+include('includes/config.php');
+loginCheck();
 
-	include('header.php');
+include('includes/header.php');
 
 	if(isset($_GET['edit']) && $_GET['edit'] == 'true') {
 		$commentID = $_GET['commentID'];
@@ -12,12 +13,13 @@
 	?>
 
 
-  <form method='POST' action='../createcomment.php'>
-  		<input type='hidden' name='commentID' value='<?php echo $commentInfo['commentID']; ?>'>
-  		<input type='hidden' name='users_id' value='<?php echo $commentInfo['userID']; ?>'>
-  		<input type='hidden' name='date_time' value='<?php echo $commentInfo['dateTime']; ?>'>
-  		<textarea name='comments'><?php echo $commentInfo['comments']; ?></textarea><br>
-  		<button type='submit' name='commentSubmit'>Edit</button>
+  <form method='POST' action='../events.php?update=true'>
+		<div class="form-group">
+			<label for="update_comments">Title</label>
+			<input type="text" class="form-control" name="update_comments" value="<?php echo $commentInfo['comments']; ?>">
+		</div>
+		<input type="hidden" name="update_commentID" value="<?php echo $commentID ?>">
+		<input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Comment">
   	</form>
 
 
