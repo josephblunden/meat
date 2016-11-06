@@ -47,7 +47,7 @@
 
 	<div class="timaskraning-yfirlit-container">
 		<div class="timaskraning">
-			<ul>
+			<ul class="margin-margin">
 				<li class="timaskraning-yfirlit-faersla">
 					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
 					<p class="timaskraning-yfirlit-haegri timaskraning-maett">Mætt</p>
@@ -59,6 +59,14 @@
 			</ul>
 		</div>
 	</div>
+
+	  <!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none;">
+    <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
+  </div>
+
+  <!-- Link to open the modal -->
+  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
 
 
 
