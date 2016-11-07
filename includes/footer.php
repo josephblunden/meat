@@ -10,7 +10,13 @@
 			      <li><a href="createuser.php">Stofna notanda</a></li>
 			      <li><a href="users.php">Breyta notendum</a></li>
 			      <li><a href="createevent.php">Stofna viðburð</a></li>
+			      
 			    </ul>
+			  </nav>
+			  <nav>
+			  	<?php if(loginSuperCheck() == true) {
+			    	echo '<ul><li><a href="attendance.php">Skoða tímaskráningu</li></ul>';} 
+			    ?>
 			  </nav>
 			  <nav class="menu-signout">
 			  	<ul>
@@ -31,9 +37,6 @@
     </footer>
   </body>
 
-  <script>
-
-  </script>
   <script src="js/script.js"></script>
 
 </html>

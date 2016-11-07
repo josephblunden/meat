@@ -25,8 +25,8 @@
 	var_dump($_SESSION['user_role_id']);
 ?>
 
-<div class="container-fluid">
-		<div class="col-md-9 p-a-3">
+<div class="timaskraning-yfirlit-container">
+		<div class="timaskraning">
 			<div class="row">
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
@@ -46,10 +46,11 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="">
-					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
-				</div>
 			</div>
 	</div>
 </div>
+
+<!-- <div class="">
+					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
+				</div> -->
 <?php include('includes/footer.php')  ?>

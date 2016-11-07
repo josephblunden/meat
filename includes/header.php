@@ -27,11 +27,8 @@
   if (!stripos($_SERVER['REQUEST_URI'], 'login.php')) {
     echo '<div class="header">
     <div class="skitamix"></div>
-    <h2>'.$_SESSION['firstname'].'</h2>
+    <a href="dashboard.php"><h2>'.$_SESSION['firstname'].'</h2></a>
     <a href="#" class="toggle-overlay open-menu">VALMYND</a>
   </div>';
   }
 ?>
-
-
-<!-- if supercheck == true þá -->
