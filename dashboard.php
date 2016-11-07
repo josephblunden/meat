@@ -41,7 +41,12 @@
 				    else {
 				        // form engine
 				        echo "<p>Þú ert búin að skrá mætinguna þína.</p>";
-				    } ?>
+				 } ?>
+
+
+				 <div id="contactResponse"></div>
+
+
 		</div>
 	</div>
 
