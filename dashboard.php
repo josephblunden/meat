@@ -39,8 +39,7 @@
 				<?php
 				    }
 				    else {
-				        // form engine
-				        echo "<p>Þú ert búin að skrá mætinguna þína.</p>";
+				        echo "<div class='form-check-svar'>Mæting skráð</div>";
 				 } ?>
 
 

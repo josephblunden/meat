@@ -20,7 +20,7 @@ class Attend {
 
  }
 
- public function getAllAttendance($userid) {
+ public function getAllAttendance() {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
