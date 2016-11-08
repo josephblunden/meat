@@ -54,6 +54,7 @@ function getAttend() {
 }
 
 
+
 //---------------------   Comments ---------------------------------
 
 if(isset($_POST['commentSubmit'])){
@@ -63,8 +64,13 @@ if(isset($_POST['commentSubmit'])){
 	$comment = new Comment();
 	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
 }
-function getComments() {
-	$alluser = new Comment();
-	$alluser->getAllComments($GLOBALS['eventid']);
-}
+
+// function getComments() {
+// 	$GLOBALS['eventID'] = $_GET['eventid'];
+// 	error_log('function.php '.$GLOBALS['eventID']);
+// 	$allComments = new Comment();
+// 	$allComments->getAllComments($GLOBALS['eventID']);
+// }
 ?>
+
+
