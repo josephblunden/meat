@@ -5,34 +5,34 @@
 	include('includes/header.php');
 
 ?>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-9 p-a-3">
+<div class="users-container">
+	<div class="users">
+		<div class="login-form">
 			<div class="row">
 				<form action="" method="post">
 					<div class="form-group">
 						<label for="create_username">Username</label>
-						<input type="text" class="form-control" name="create_username" value="">
+						<input type="text" class="form-control" name="create_username" value="" placeholder="Notendanafn">
 					</div>
 					<div class="form-group">
 						<label for="create_password">Password</label>
-						<input type="password" class="form-control" name="create_password" value="">
+						<input type="password" class="form-control" name="create_password" value="" placeholder="Lykilorð">
 					</div>
 					<div class="form-group">
 						<label for="create_email">Email</label>
-						<input type="email" class="form-control" name="create_email" value="">
+						<input type="email" class="form-control" name="create_email" value="" placeholder="Netfang">
 					</div>
 					<div class="form-group">
 						<label for="create_firstname">First name</label>
-						<input type="text" class="form-control" name="create_firstname" value="">
+						<input type="text" class="form-control" name="create_firstname" value="" placeholder="Fornafn">
 					</div>
 					<div class="form-group">
 						<label for="create_lastname">Last name</label>
-						<input type="text" class="form-control" name="create_lastname" value="">
+						<input type="text" class="form-control" name="create_lastname" value="" placeholder="Kennitala">
 					</div>
 					<div class="form-group">
 						<label for="create_profile_pic">Profile pic path</label>
-						<input type="text" class="form-control" name="create_profile_pic" value="">
+						<input type="text" class="form-control" name="create_profile_pic" value="" placeholder="Slóð á profilemynd">
 					</div>
 					<fieldset class="form-group">
 						<div class="form-check">
@@ -48,7 +48,9 @@
 							</label>
 						</div>
 					</fieldset>
-					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Create User">
+					<button type="submit" class="user-button" value="Create User">
+					Stofna notanda
+					</button>
 				</form>
 			</div>
 		</div>
