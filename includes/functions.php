@@ -45,12 +45,12 @@ $GLOBALS['status'] = 0;
 if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 	$GLOBALS['status'] = $_POST['create_status'];
 	$statusTime = $_POST['todayTime'];
-	$event = new Attend();
-	$event->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime);
+	$attend = new Attend();
+	$attend->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime);
 }
 function getAttend() {
-	$alluser = new Attend();
-	$alluser->getAllAttendance();
+	$allAttendance = new Attend();
+	$allAttendance->getAllAttendance($_SESSION['userid']);
 }
 
 
@@ -63,8 +63,11 @@ if(isset($_POST['commentSubmit'])){
 	$comment = new Comment();
 	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
 }
-function getComments() {
-	$alluser = new Comment();
-	$alluser->getAllComments($GLOBALS['eventid']);
-}
+
+// function getComments() {
+// 	$GLOBALS['eventID'] = $_GET['eventid'];
+// 	error_log('function.php '.$GLOBALS['eventID']);
+// 	$allComments = new Comment();
+// 	$allComments->getAllComments($GLOBALS['eventID']);
+// }
 ?>

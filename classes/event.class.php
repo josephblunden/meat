@@ -56,16 +56,16 @@ class Event {
     // Only returning info from 1 user so I will create an array that I can easily work with on my page
     $eventArr;
     while ($stmt->fetch()) {
-      $eventArr['eventid'] = $eventid;
       $eventArr['title'] = $tilte;
-      $eventArr['event_date'] = $eventDate;
+      $eventArr['eventDate'] = $eventDate;
       $eventArr['description'] = $description;
       $eventArr['author'] = $author;
+      $eventArr['eventid'] = $eventid;
     }
 
    // Close connection
    $stmt->close();
-   $mysqli->close();
+  //  $mysqli->close();
    return $eventArr;
  }
 

@@ -42,7 +42,10 @@ class Attend {
       }
 
       echo '<tr>';
-        echo '<th scope="row">' .$attendid. ' <td>' .$status. '</td> <td>' . $statusTime.'</td><td>' .$_SESSION['firstname'].'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
+        echo '<th scope="row">' .$attendid. ' <td>' .$status. '</td> <td>' . $statusTime.'</td>
+        <td>' .$_SESSION['firstname'].'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'">
+        <button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'">
+        <button class="delete-button">Delete</button></a></td>';
       echo '</tr>';
     }
 

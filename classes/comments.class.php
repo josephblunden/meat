@@ -13,40 +13,37 @@ public function setComments($events_id, $users_id, $date_time, $comments) {
     $stmt->execute();
 
     $stmt->close();
-    $mysqli->close();
+    //$mysqli->close();
 
     //header("Location: ./oneevent.php?one=true&eventid='.$events_id.'");
 
 
 }
 
-public function getAllComments(){
+public function getAllComments($eventID){
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
-
-	$stmt = $mysqli->prepare("SELECT users_id, events_id, date_time, comments, id FROM comments ORDER BY id DESC");
+  error_log($eventID);
+	$stmt = $mysqli->prepare("SELECT users_id, date_time, comments, id FROM comments WHERE events_id = ?");
+  $stmt->bind_param('i', $eventID);
   $stmt->execute();
-  $stmt->bind_result($userID, $eventsID, $dateTime, $comments, $commentID);
-	while ($stmt->fetch()) {
-		echo "<div class='comment-box'><p>";
-		echo $userID;
-		echo $dateTime."<br>";
-		echo "<p>".$comments;
-		echo "</p>
-      <div class'buttons buttons-comments'>
-      <a class='edit-button-a' href='editcomment.php?edit=true&commentID=".$commentID."'>
-      <button class='edit-button'>Edit</button></a>
-      <a class='delete-button-a' href='oneevent.php?delete=true&commentID=".$commentID."'>
-      <button class='delete-button'>Delete</button></a>
-      </div>
+  $stmt->bind_result($userID, $dateTime, $comments, $commentID);
+  $commentInfo[] = array();
+$commentArr;
+  while($stmt->fetch()) {
+    error_log("hello ".$comments);
+    $commentInfo['userID'] = $userID;
+    $commentInfo['dateTime'] = $dateTime;
+    $commentInfo['comments'] = $comments;
+    $commentInfo['commentID'] = $commentID;
+    $commentArr[] = $commentInfo;
 
-
-
-		</div>";
-	};
+  }
+return $commentArr;
 
 }
+
 
 // Get all user info from user table by user_id
 public function getCommentsById($commentID) {
