@@ -252,13 +252,13 @@ aside nav ul li a.close {
   padding-bottom: 30px;
 }
 
-fieldset {
+fieldset.login-login {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-fieldset label {
+fieldset.login-login label {
   display: none;
 }
 
@@ -266,7 +266,7 @@ form {
   overflow: hidden;
 }
 
-.login {
+.login-index {
   background-color: #F3F5EF;
   height: 10vh;
   display: -webkit-box;
@@ -286,7 +286,7 @@ form {
           align-items: center;
 }
 
-.login input, .login button {
+.login-index input, .login-index button {
   font-family: "Raleway", sans-serif;
   border-radius: 15px;
   background: #fff;

@@ -65,13 +65,13 @@
 	</div>
 
 	  <!-- Modal HTML embedded directly into document -->
-  <div id="ex1" style="display:none;">
+<!--   <div id="ex1" style="display:none;">
     <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
-  </div>
+  </div> -->
 
   <!-- Link to open the modal -->
-  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
-
+<!--   <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+ -->
 
 
 <?php include('includes/footer.php')  ?>
