@@ -72,3 +72,5 @@ if(isset($_POST['commentSubmit'])){
 // 	$allComments->getAllComments($GLOBALS['eventID']);
 // }
 ?>
+
+
