@@ -50,7 +50,7 @@ if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 }
 function getAttend() {
 	$alluser = new Attend();
-	$alluser->getAllAttendance();
+	$alluser->getAllAttendance($_SESSION['userid']);
 }
 
 
