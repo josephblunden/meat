@@ -45,13 +45,13 @@ $GLOBALS['status'] = 0;
 if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 	$GLOBALS['status'] = $_POST['create_status'];
 	$statusTime = $_POST['todayTime'];
-	$attend = new Attend();
-	$attend->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime);
+	$event = new Attend();
+	$event->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime);
 }
 function getAttend() {
-	$allAttendance = new Attend();
-	$allAttendance->getAllAttendance($_SESSION['userid']);
-	
+	$alluser = new Attend();
+	$alluser->getAllAttendance($_SESSION['userid']);
+
 }
 
 
