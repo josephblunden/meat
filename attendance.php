@@ -22,10 +22,10 @@
 		$attend = new Attend();
 		$attend->deleteAttendance($attendid);
 	};
-	var_dump($_SESSION['user_role_id']);
+	// var_dump($_SESSION['user_role_id']);
 ?>
 
-<div class="timaskraning-yfirlit-container">
+<div class="timaskraning-container">
 		<div class="timaskraning">
 			<div class="row">
 				<div class="">
@@ -40,7 +40,7 @@
 						</div>
 					<?php endif; ?>
 					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Status</th> <th>Time Created</th> <th>First Name</th><th>Action</th> </tr> </thead>
+						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
 						<tbody>
 							<?php getAttend(); ?>
 						</tbody>
@@ -49,6 +49,15 @@
 			</div>
 	</div>
 </div>
+
+<!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none;">
+    <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
+  </div>
+
+   <!-- Link to open the modal -->
+  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
 
 <!-- <div class="">
 					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>

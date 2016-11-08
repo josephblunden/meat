@@ -42,7 +42,7 @@ class Attend {
       }
 
       echo '<tr>';
-        echo '<th scope="row">' .$attendid. ' <td>' .$status. '</td> <td>' . $statusTime.'</td><td>' .$_SESSION['firstname'].'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
+        echo '<td>' .$_SESSION['firstname'].'</td><td>' .$status. '</td> <td>' . $statusTime.'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
       echo '</tr>';
     }
 
@@ -52,6 +52,7 @@ class Attend {
   //  $stmt->close();
   //  $mysqli->close();
   //  unset($mysqli);
+
 
  }
 // Get all user info from user table by user_id
