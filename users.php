@@ -28,8 +28,8 @@
 		$user->deleteUser($userid);
 	}
 ?>
-<div class="container-fluid">
-		<div class="col-md-9 p-a-3">
+<div class="users-container">
+		<div class="users">
 			<div class="row">
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
@@ -43,15 +43,15 @@
 						</div>
 					<?php endif; ?>
 					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Profile Pic</th> <th>First Name</th> <th>Last Name</th> <th>Username</th><th>Email</th><th>User role</th> <th>Action</th> </tr> </thead>
+						<thead> <tr> <th class="users-profile-picture-td">Profile Pic</th> <th class="users-name-td">Name</th> <th>Username</th><th>Email</th><th>User role</th> <th>Action</th> </tr> </thead>
 						<tbody>
 							<?php getUsers(); ?>
 						</tbody>
 					</table>
 				</div>
-				<div class="">
+				<!-- <div class="">
 					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
-				</div>
+				</div> -->
 			</div>
 	</div>
 </div>

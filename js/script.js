@@ -14,6 +14,7 @@
   //   }
   // });
   $(document).ready(function() {
+    
     (function($) {
       $(function() {
         $('.toggle-overlay').click(function() {
