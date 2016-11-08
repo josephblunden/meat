@@ -51,7 +51,9 @@ if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 function getAttend() {
 	$allAttendance = new Attend();
 	$allAttendance->getAllAttendance($_SESSION['userid']);
+	
 }
+
 
 
 //---------------------   Comments ---------------------------------
