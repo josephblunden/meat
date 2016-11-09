@@ -64,13 +64,19 @@
 
 
 
+
 <div class="comment-single-container">
 	<div class=".vidburdur-stakur-info-container-bakgrunnslaust">
-	<div class="userid-comment">
-		<?php
-			echo $commentArr[$i]['userID']."<br/>";
+	<div>
+		<?php 
+			$userid = $commentArr[$i]['userID'];
+                    $user = new User();
+                    $userInfo = $user->getUserById($userid);
+                        echo $userInfo['firstname'];
 		?>
+
 	</div>
+
 	<div class="date-comment">
 		<?php
 			echo $commentArr[$i]['dateTime']."<br/>";
