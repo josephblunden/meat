@@ -34,22 +34,15 @@ class User {
     //var_dump($stmt);
     while ($stmt->fetch()) {
       if($userRole === 1) {
-        $userRole = '<span class="tag tag-success">Kennari</span>';
+        $userRole = 'kennari-class';
       } else {
-        $userRole = '<span class="tag tag-warning">Nemandi</span>';
+        $userRole = 'nemandi-class';
       }
 
-    //   echo '<div>';
-    //     echo '<th scope="row"><td class="users-profile-picture-td"><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td class="users-name-td">' .$firstname.' '.$lastname. ' </td> <td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
-    //   echo '</div>';
-    // }
-
-      echo '<div class="notendayfirlit-card">';
+      echo '<div class="notendayfirlit-card '.$userRole.'">';
         echo '
           <h4>'.$firstname.' '.$lastname.'</h4>
           <p>'.$email.'</p>
-          <p>'.$username.'</p>
-          <p>'.$userRole.'</p>
           <p></p>
           <p></p>
           <div class="timaskraning-stok-takkar">
@@ -62,28 +55,49 @@ class User {
       echo '</div>';
     }
 
-    //  echo '<div class="timaskraning-stok '.$status.'">';
-    //     echo '
-    //       <h4>'.$statusDay.'</h4>
-    //       <p><span class="timaskraning-bold">'.$status1.'</span></p>
-    //       <p>Skráð klukkan '.$statusTime.'</p>
-    //       <div class="timaskraning-stok-takkar">
-    //       <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
-    //       <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
-    //       </div>
-    //     ';
-    //   echo '</div>';
+ }
 
-    // }
 
-   /**
-     * Close connection
-   */
-  //  $stmt->close();
-  //  $//mysqli->close();
-  //  unset($mysqli);
+ public function getAllUsers2() {
+   // Connecting to Database
+   $db = $GLOBALS['gdb'];
+   $mysqli = $db->getConnection();
+
+    // prepare and bind
+    $stmt = $mysqli->prepare("SELECT id, firstname, lastname, username, email, user_role_id, profile_pic FROM users");
+    $stmt->execute();
+    $stmt->bind_result($userid, $firstname, $lastname, $username, $email, $userRole, $profilePic);
+
+
+    //var_dump($stmt);
+    while ($stmt->fetch()) {
+      if($userRole === 1) {
+        $userRole = 'kennari-class-1';
+      } else {
+        $userRole = 'nemandi-class-1';
+      }
+
+      echo '<div class="notendayfirlit-card '.$userRole.'">';
+        echo '
+          <h4>'.$firstname.' '.$lastname.'</h4>
+          <p>'.$email.'</p>
+          <p></p>
+          <p></p>
+          <div class="timaskraning-stok-takkar">
+          <a class="timaskraning-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+          <a class="timaskraning-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+          </div>
+
+
+        ';
+      echo '</div>';
+    }
 
  }
+
+
+
+
 // Get all user info from user table by user_id
 public function getUserById($userid) {
   // Connecting to Database
