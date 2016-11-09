@@ -3,6 +3,7 @@ class Attend {
  private $_db;
  private $_mysqli;
 
+ //Create new Attendance
  public function createNewAttendance($userid, $status, $statusTime, $statusDay) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -15,25 +16,20 @@ class Attend {
  	$stmt->execute();
 
  	$stmt->close();
- // 	$//mysqli->close();
-  //header('Location: ./dashboard.php');
 
  }
-
+ // getting all attendance for logged in user
  public function getAllAttendance($userid) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
 
   	// prepare and bind
-
   	$stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY id DESC");
 
     $stmt->execute();
     $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
 
-
-    //var_dump($stmt);
     while ($stmt->fetch()) {
       $status1 = $status;
 
@@ -68,20 +64,17 @@ class Attend {
 
     }
  }
+ //Getting attendance for all studends by user_id
  public function getAllAttendanceForStudent($userid) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
 
   	// prepare and bind
-
   	$stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY id DESC");
-
     $stmt->execute();
     $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
 
-
-    //var_dump($stmt);
     while ($stmt->fetch()) {
       $status1 = $status;
 
@@ -116,6 +109,7 @@ class Attend {
 
     }
  }
+ // Gett all attendance for user for display on dashboard
  public function getAllAttendanceDash($userid) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
@@ -126,7 +120,6 @@ class Attend {
    $stmt->execute();
    $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
 
-    //var_dump($stmt);
     while ($stmt->fetch()) {
       $status1 = $status;
 
@@ -156,7 +149,7 @@ class Attend {
 
     }
  }
-// Get all user info from user table by user_id
+// Get all user attendance from checkin table by user_id
 public function getAttendanceById($userid) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -205,10 +198,10 @@ public function getAttendanceByAttendId($attendID) {
 
   // Close connection
   $stmt->close();
-  // $//mysqli->close();
+
   return $attendInfo;
 }
-
+// uppdate atendance
 public function updateAttendance($status, $attendid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
@@ -220,9 +213,6 @@ error_log($attendid);
  $stmt->bind_param("ii", $status, $attendid);
  $stmt->execute();
 
- // $stmt->close();
- // $//mysqli->close();
- //header('Location: ./users.php?updated=true');
 }
 
 public function deleteAttendance($attendid) {
@@ -236,8 +226,7 @@ public function deleteAttendance($attendid) {
  $stmt->execute();
 
  $stmt->close();
- //$//mysqli->close();
- //header('Location: ./users.php?updated=true');
+
 }
 
 }

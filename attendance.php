@@ -19,7 +19,6 @@
 		$attend = new Attend();
 		$attend->deleteAttendance($attendid);
 	};
-	// var_dump($_SESSION['user_role_id']);
 ?>
 
 <div class="timaskraning-container">
