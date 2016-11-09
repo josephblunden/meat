@@ -63,10 +63,10 @@ function getAttend() {
 
 
 //---------------------   Comments ---------------------------------
-
+$_POST['todayTimeComment'] = date("j F, Y g:i a");
 if(isset($_POST['commentSubmit'])){
 	$events_id = $_GET['eventid'];
-	$date_time = $_POST['todayTime'];
+	$date_time = $_POST['todayTimeComment'];
 	$comments = $_POST['comments'];
 	$comment = new Comment();
 	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
