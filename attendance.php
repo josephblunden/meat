@@ -43,8 +43,14 @@
 						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
 						<tbody> -->
 						<div class="timaskraning-nemandi-container">
+							<?php 
+								echo '<h2> '.$_SESSION['firstname'].'</h2>';
+							?>
+						</div>
+						<div class="timaskraning-nemandi-container">
 							<?php getAttend(); ?>
 						</div>
+					
 		<!-- 				</tbody>
 					</table> -->
 				</div>
