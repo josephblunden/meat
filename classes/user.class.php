@@ -16,7 +16,7 @@ class User {
  	$stmt->execute();
 
  	$stmt->close();
- 	$mysqli->close();
+ 	//mysqli->close();
   header('Location: ./dashboard.php');
  }
 
@@ -57,7 +57,7 @@ class User {
           <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
           <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
           </div>
-        
+
 
         ';
       echo '</div>';
@@ -81,7 +81,7 @@ class User {
      * Close connection
    */
   //  $stmt->close();
-  //  $mysqli->close();
+  //  $//mysqli->close();
   //  unset($mysqli);
 
  }
@@ -112,7 +112,7 @@ public function getUserById($userid) {
 
   // Close connection
   $stmt->close();
-  $mysqli->close();
+  //mysqli->close();
   return $userArr;
 }
 
@@ -127,7 +127,7 @@ public function updateUser($firstname, $lastname, $username, $password, $email, 
  $stmt->execute();
 
  // $stmt->close();
- // $mysqli->close();
+ // $//mysqli->close();
  // unset($mysqli);
  //header('Location: ./users.php?updated=true');
 }
@@ -143,7 +143,7 @@ public function deleteUser($userid) {
  $stmt->execute();
 
  $stmt->close();
- //$mysqli->close();
+ //$//mysqli->close();
  //header('Location: ./users.php?updated=true');
 }
 

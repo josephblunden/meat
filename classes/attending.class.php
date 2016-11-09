@@ -15,7 +15,7 @@ class Attend {
  	$stmt->execute();
 
  	$stmt->close();
- 	$mysqli->close();
+ // 	$//mysqli->close();
   //header('Location: ./dashboard.php');
 
  }
@@ -76,7 +76,7 @@ class Attend {
      * Close connection
    */
   //  $stmt->close();
-  //  $mysqli->close();
+  //  $//mysqli->close();
   //  unset($mysqli);
 
 
@@ -144,7 +144,7 @@ public function getAttendanceById($userid) {
 
   // Close connection
   $stmt->close();
-  $mysqli->close();
+  // $//mysqli->close();
   return $attendArr;
 }
 
@@ -159,7 +159,7 @@ public function updateAttendance($status, $statusTime, $statusDay, $attendid) {
  $stmt->execute();
 
  // $stmt->close();
- // $mysqli->close();
+ // $//mysqli->close();
  //header('Location: ./users.php?updated=true');
 }
 
@@ -174,7 +174,7 @@ public function deleteAttendance($attendid) {
  $stmt->execute();
 
  $stmt->close();
- //$mysqli->close();
+ //$//mysqli->close();
  //header('Location: ./users.php?updated=true');
 }
 
