@@ -57,18 +57,11 @@
 .vidburdir-card:hover:after, .vidburdir-card:hover:before {
     opacity: 1;
 }
-.event-content {
-
-}
-
-
 .event-title {
 	position: relative;
-
 	display: inline-block;
 	font-size: 1.25em;
 	margin-bottom: 15px;
-
 }
 .event-date {
 	position: relative;
@@ -133,4 +126,40 @@ textarea:focus {
 }
 .search {
 		margin-top: 15px;
+}
+.editevent-container{
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	padding: 20px 0;
+}
+.editevent input::placeholder {
+	font-family: $font;
+	font-size: 18px;
+}
+.editevent-container label {
+	display: none;
+}
+.editevent {
+	padding: 20px 0;
+}
+.editevent input {
+	width: 300px;
+}
+.editevent-button {
+	border-radius: 50px;
+	background-color: white;
+	border: 1px solid $grar;
+	padding: 10px;
+	display: table;
+	width: 100%;
+	transition: all .5s ease;
+	font-family: $font;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.editevent-button:hover {
+	background-color: $secondary-color;
+	transition: all .5s ease;
 }
