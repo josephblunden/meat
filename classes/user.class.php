@@ -47,15 +47,14 @@ class User {
       echo '<div class="notendayfirlit-card">';
         echo '
           <h4>'.$firstname.' '.$lastname.'</h4>
-          <img class="notendayfirlit-img" src="'.$profilePic.'" alt="'.$firstname.'">
           <p>'.$email.'</p>
           <p>'.$username.'</p>
           <p>'.$userRole.'</p>
           <p></p>
           <p></p>
           <div class="timaskraning-stok-takkar">
-          <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
-          <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
+          <a class="timaskraning-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+          <a class="timaskraning-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
           </div>
         
 
