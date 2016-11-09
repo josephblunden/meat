@@ -44,9 +44,6 @@ class Event {
                 </div>
               </div>
             </a>
-
-
-
        ';
      }
 

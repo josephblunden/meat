@@ -35,6 +35,12 @@
         <p><?php echo $eventInfo['description']; ?></p>
         <h3><?php echo $eventInfo['author']; ?></h3>
 			</div>
+			<a class="edit-button-a" href="editevent.php?edit=true&eventid=<?php echo $eventid ?>">
+				<button class="edit-button">Edit</button>
+			</a>
+			<a class="delete-button-a" href="events.php?delete=true&eventid=<?php echo $eventid ?>">
+				<button class="delete-button">Delete</button>
+			</a>
 		</div>
 		</div>
 	</div>
@@ -74,7 +80,7 @@
 				?>
 			</p>
 			<div class'buttons buttons-comments'>
-				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=<?php echo $commentArr[$i]['commentID'] ?>&eventid=<?php echo $eventid ?>'> 
+				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=<?php echo $commentArr[$i]['commentID'] ?>&eventid=<?php echo $eventid ?>'>
 					<button class='delete-button'>Delete</button>
 				</a>
 			</div>
