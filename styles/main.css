@@ -981,6 +981,13 @@ button[name="commentSubmit"]:hover {
   margin-bottom: 15px;
 }
 
+.timaskraning-stok:after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
 .timaskraning-maeting {
   background-color: #7fc7af;
 }
@@ -1082,6 +1089,13 @@ a.timaskraning-admin-takki:hover {
   margin-bottom: 15px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+}
+
+.notendayfirlit-card:after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
 }
 
 .notendayfirlit-admin-takki {
