@@ -48,21 +48,17 @@
 
 		</div>
 	</div>
-
-	<div class="timaskraning-yfirlit-container">
-		<div class="timaskraning">
-			<ul class="margin-margin">
-				<li class="timaskraning-yfirlit-faersla">
-					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
-					<p class="timaskraning-yfirlit-haegri timaskraning-maett">Mætt</p>
-				</li>
-				<li class="timaskraning-yfirlit-faersla">
-					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
-					<p class="timaskraning-yfirlit-haegri timaskraning-leyfi">Í leyfi</p>
-				</li>
-			</ul>
-		</div>
+	<div class="timaskraning-container">
+			<div class="timaskraning">
+				<div class="row">
+					<div class="">
+	<div class="timaskraning-nemandi-container">
+		<?php getAttendDashboard(); ?>
 	</div>
+</div>
+</div>
+</div>
+</div>
 
 	  <!-- Modal HTML embedded directly into document -->
 <!--   <div id="ex1" style="display:none;">

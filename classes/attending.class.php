@@ -79,6 +79,51 @@ class Attend {
 
 
  }
+ public function getAllAttendanceDash($userid) {
+   // Connecting to Database
+   $db = $GLOBALS['gdb'];
+   $mysqli = $db->getConnection();
+
+   // prepare and bind
+
+   $stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY status_day DESC");
+
+    $stmt->execute();
+    $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
+
+
+    //var_dump($stmt);
+    while ($stmt->fetch()) {
+      $status1 = $status;
+
+      if($status === 1) {
+        $status = 'timaskraning-maeting';
+      } elseif($status === 2) {
+        $status = 'timaskraning-veikindi';
+      } else{
+        $status = 'timaskraning-leyfi';
+      }
+
+      if($status1 === 1) {
+        $status1 = 'Mætt/ur';
+      } elseif($status1 === 2) {
+        $status1 = 'Veik/ur';
+      } else{
+        $status1 = 'Í leyfi';
+      }
+
+      echo '<div class="timaskraning-stok '.$status.'">';
+        echo '
+          <h4>'.$statusDay.'</h4>
+          <p>'.$statusTime.'</p>
+          <p>'.$status1.'</p>
+          <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
+          <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
+        ';
+      echo '</div>';
+
+    }
+ }
 // Get all user info from user table by user_id
 public function getAttendanceById($userid) {
   // Connecting to Database
