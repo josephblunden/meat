@@ -48,6 +48,7 @@ class User {
           <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
           <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
           <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="studentattendance.php?student=true&userid='.$userid.'">Skoða Mætingu</a>
           </div>
 
 
