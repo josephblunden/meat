@@ -1,7 +1,6 @@
 <?php
 	include('includes/config.php');
 	loginCheck();
-	include('includes/comments.php');
 
 	include('includes/header.php');
 
@@ -19,10 +18,10 @@
 
 	//Check if parameter exists and is set to true
 	if(isset($_GET['delete']) && $_GET['delete'] == 'true') {
-		$eventid = $_GET['eventid'];
+		$eventID = $_GET['eventid'];
 
-		$event = new Event();
-		$event->deleteEvent($eventid);
+
+		deleteEventAndCommnets($eventID);
 	}
 ?>
 <div class="container-fluid">

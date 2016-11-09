@@ -36,6 +36,12 @@ function getEvents() {
 	$alluser = new Event();
 	$alluser->getAllEvents();
 }
+function deleteEventAndCommnets($eventID) {
+        $allComments = new Comment();
+        $allComments->deleteCommentByEvents($eventID);
+				$allEvents = new Event();
+        $allEvents->deleteEvent($eventID);
+    }
 
 
 //---------------------   Attending ---------------------------------
@@ -72,5 +78,3 @@ if(isset($_POST['commentSubmit'])){
 // 	$allComments->getAllComments($GLOBALS['eventID']);
 // }
 ?>
-
-
