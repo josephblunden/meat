@@ -26,22 +26,19 @@
 			<h2 class="vidburdur-nafn-fyrirsogn">'.$eventInfo['title'].'</h2>
 			<h4>'.$eventInfo['eventDate'].'</h4>
 			<p>'.$eventInfo['description'].'</p>
-
 		' ?>
 	</div>
 </div>
-
-	<div class="vidburdur-stakur-info-container">
-		<div class="vidburdur-stakur-info">
-			<a class="edit-button-a" href="editevent.php?edit=true&eventid=<?php echo $eventid ?>">
-					<button class="edit-button">Edit</button>
-				</a>
-				<a class="delete-button-a" href="events.php?delete=true&eventid=<?php echo $eventid ?>">
-					<button class="delete-button">Delete</button>
-				</a>
-		</div>
+<div class="vidburdur-stakur-info-container">
+	<div class="vidburdur-stakur-info">
+		<a class="edit-button-a" href="editevent.php?edit=true&eventid=<?php echo $eventid ?>">
+				<button class="edit-button">Edit</button>
+			</a>
+			<a class="delete-button-a" href="events.php?delete=true&eventid=<?php echo $eventid ?>">
+				<button class="delete-button">Delete</button>
+			</a>
 	</div>
-		
+</div>
 <div class="vidburdur-stakur-info-container-bakgrunnslaust">
 	<div class="vidburdur-stakur-info">
 		<div class="comment-post">
@@ -53,35 +50,23 @@
 		</div>
 	</div>
 </div>
-
-
 <?php
 		$GLOBALS['eventID'] = $_GET['eventid'];
 		$allComments = new Comment();
 		$commentArr = $allComments->getAllComments($GLOBALS['eventID']);
 		for ($i=0; $i < count($commentArr); $i++) {
 	?>
-
-
-
-
 <div class="comment-single-container">
 	<div class="comment-stakur-info">
 	<div class="comment-first-name">
-		<?php 
+		<?php
 			$userid = $commentArr[$i]['userID'];
-                    $user = new User();
-                    $userInfo = $user->getUserById($userid);
-                        echo '<p class="comment-first-name-name">'.$userInfo['firstname'].'</p>';
-		?>
-
-	<?php
+      $user = new User();
+      $userInfo = $user->getUserById($userid);
+    	echo '<p class="comment-first-name-name">'.$userInfo['firstname'].'</p>';
 			echo $commentArr[$i]['dateTime']."<br/>";
 		?>
-
 	</div>
-
-	
 	<p class="vidburdur-comment-comment">
 		<?php
 			echo $commentArr[$i]['comments']."<br/>";
@@ -95,9 +80,6 @@
 	</div>
 </div>
 
-<?php }?>
-<!-- 
-</div>
-</div> -->
+<?php } ?>
 
 <?php include('includes/footer.php'); ?>
