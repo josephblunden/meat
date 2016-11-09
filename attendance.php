@@ -22,11 +22,11 @@
 		$attend = new Attend();
 		$attend->deleteAttendance($attendid);
 	};
-	var_dump($_SESSION['user_role_id']);
+	// var_dump($_SESSION['user_role_id']);
 ?>
 
-<div class="container-fluid">
-		<div class="col-md-9 p-a-3">
+<div class="timaskraning-container">
+		<div class="timaskraning">
 			<div class="row">
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
@@ -39,17 +39,29 @@
   						<strong>Well done!</strong> You successfully deleted the user.
 						</div>
 					<?php endif; ?>
-					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Status</th> <th>Time Created</th> <th>First Name</th><th>Action</th> </tr> </thead>
-						<tbody>
+					<!-- <table class="table table-striped">
+						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
+						<tbody> -->
+						<div class="timaskraning-nemandi-container">
 							<?php getAttend(); ?>
-						</tbody>
-					</table>
-				</div>
-				<div class="">
-					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
+						</div>
+		<!-- 				</tbody>
+					</table> -->
 				</div>
 			</div>
 	</div>
 </div>
+
+<!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none;">
+    <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
+  </div>
+
+   <!-- Link to open the modal -->
+  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
+
+<!-- <div class="">
+					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
+				</div> -->
 <?php include('includes/footer.php')  ?>

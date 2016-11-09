@@ -2,9 +2,10 @@
 	include('includes/config.php');
 	include('includes/header.php');
 ?>
-<div class="container-fluid">
+
+		<div class="container-fluid">
 	<div class="row">
-		<div class="login-form center-block">
+		<div class="login-form-2 center-block">
 		<?php if(isset($_GET['login']) and $_GET['login'] == 'denied' || $_GET['login'] == 'empty' ) : ?>
 
 			<div class="alert alert-danger" role="alert">
@@ -26,14 +27,14 @@
 			<img src="images/logo.svg">
 		</div>
 
-		<div class="login">
+		<div class="login-index">
 			<form action="" method="post">
-				<fieldset>
+				<fieldset class="login-login">
 						<label for="username">Username</label>
-						<input type="text" placeholder="Notendanafn" class="form-control" name="username" value="">
+						<input type="text" placeholder="Notendanafn" class="form-control-2" name="username" value="">
 
 						<label for="password">Password</label>
-						<input placeholder="Lykilorð" type="password" class="form-control" name="password" value="">
+						<input placeholder="Lykilorð" type="password" class="form-control-2" name="password" value="">
 
 						<button name="submit" value="Login">
 							Skrá inn
@@ -41,16 +42,20 @@
 	
 					</div>
 					<div class="">
-						<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
+						
 					</div>
 				</fieldset>
 			</form>
-		</div>
+
+
+
+
+
 
 		
-	</div>
-</div><!-- end row -->
-</div><!-- end container -->
+	<!-- </div> -->
+<!-- </div> --><!-- end row -->
+<!-- </div> --><!-- end container -->
 
 
 <?php include('includes/footer.php'); ?>

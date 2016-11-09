@@ -3,14 +3,14 @@ class Event {
   private $_db;
   private $_mysqli;
 
-  public function createEvent($eventName, $eventDate, $eventDesc, $authorName, $eventLocation) {
+  public function createEvent($eventName, $eventDate, $eventDesc, $authorName) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("INSERT INTO events(title, event_date, description, author, location) VALUES (?, ?, ?, ?, ?)");
-   $stmt->bind_param("sssss", $eventName, $eventDate, $eventDesc, $authorName, $eventLocation);
+   $stmt = $mysqli->prepare("INSERT INTO events(title, event_date, description, author) VALUES (?, ?, ?, ?)");
+   $stmt->bind_param("ssss", $eventName, $eventDate, $eventDesc, $authorName);
 
    $stmt->execute();
 
@@ -24,13 +24,13 @@ class Event {
     $mysqli = $db->getConnection();
 
    	// prepare and bind
-   	$stmt = $mysqli->prepare("SELECT id, title, event_date, description, author, location FROM events");
+   	$stmt = $mysqli->prepare("SELECT id, title, event_date, description, author FROM events");
      $stmt->execute();
-     $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author, $location);
+     $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author);
      while ($stmt->fetch()) {
 
        echo '<tr>';
-         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$location.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a><a class="one-button-a" href="oneevent.php?one=true&eventid='.$eventid.'"><button class="one-button">Show</button></i></a>';
+         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a><a class="one-button-a" href="oneevent.php?one=true&eventid='.$eventid.'"><button class="one-button">Show</button></i></a>';
        echo '</tr>';
      }
 
@@ -48,44 +48,43 @@ class Event {
    $mysqli = $db->getConnection();
 
     // prepare and bind
-    $stmt = $mysqli->prepare("SELECT title, event_date, description, author, location FROM events	WHERE id = ?");
+    $stmt = $mysqli->prepare("SELECT title, event_date, description, author FROM events	WHERE id =?");
     $stmt->bind_param('i', $eventid);
     $stmt->execute();
-    $stmt->bind_result($tilte, $eventDate, $description, $author, $location);
+    $stmt->bind_result($tilte, $eventDate, $description, $author);
 
     // Only returning info from 1 user so I will create an array that I can easily work with on my page
     $eventArr;
     while ($stmt->fetch()) {
-      $eventArr['eventid'] = $eventid;
       $eventArr['title'] = $tilte;
       $eventArr['eventDate'] = $eventDate;
       $eventArr['description'] = $description;
       $eventArr['author'] = $author;
-      $eventArr['location'] = $location;
+      $eventArr['eventid'] = $eventid;
     }
 
    // Close connection
    $stmt->close();
-   $mysqli->close();
+  //  $mysqli->close();
    return $eventArr;
  }
 
 
- public function updateEvents($eventid, $tilte, $eventDate, $description, $author, $location) {
+ public function updateEvents($eventid, $tilte, $eventDate, $description, $author) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
   // prepare and bind
-  $stmt = $mysqli->prepare("UPDATE events SET title=?, event_date=?, description=?, author=?, location=? WHERE id=?");
-  $stmt->bind_param("sssssi", $tilte, $eventDate, $description, $author, $location, $eventid);
+  $stmt = $mysqli->prepare("UPDATE events SET title=?, event_date=?, description=?, author=? WHERE id=?");
+  $stmt->bind_param("ssssi", $tilte, $eventDate, $description, $author, $eventid);
   $stmt->execute();
 
   // $stmt->close();
   // $mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
-// Deleteing events
+
  public function deleteEvent($eventid) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -97,8 +96,8 @@ class Event {
   $stmt->execute();
 
   $stmt->close();
-
-
+  //$mysqli->close();
+  //header('Location: ./users.php?updated=true');
  }
 
  }

@@ -14,6 +14,7 @@
   //   }
   // });
   $(document).ready(function() {
+    
     (function($) {
       $(function() {
         $('.toggle-overlay').click(function() {
@@ -25,14 +26,12 @@
 
       $('#userCalendar').fullCalendar({
           googleCalendarApiKey: 'AIzaSyBiWG_Zp8Fmm8-kUaJRzGkYEGBzzH-X97s',
-          schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
           events: {
               googleCalendarId: '0atlgl77nu11vhb4u4pb253bbc@group.calendar.google.com'
           },
           // weekends: false,
           firstDay: 1,
           weekNumbers: true,
-          editable: true, // enable draggable events
           header: {
             left:   'today prev,next',
             center: 'title',

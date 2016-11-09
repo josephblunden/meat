@@ -26,12 +26,10 @@ if(isset($_POST['create_event_name']) && !empty($_POST['create_event_name'])) {
 	$eventName = $_POST['create_event_name'];
 	$eventDate = $_POST['create_event_date'];
 	$eventDesc = $_POST['create_event_desc'];
-	$eventLocation = $_POST['create_event_location'];
 	$authorFirstName = $_SESSION['firstname'];
-	$authorLastName = $_SESSION['lastname'];
-	$authorName = $authorFirstName.' '.$authorLastName;
+	$authorFirstName = $_SESSION['lastname'];
 	$event = new Event();
-	$event->createEvent($eventName, $eventDate, $eventDesc, $authorName, $eventLocation);
+	$event->createEvent($eventName, $eventDate, $eventDesc, $authorFirstName, $authorFirstName);
 }
 // Geting all the users from user.class.php gettAllUsers()
 function getEvents() {
@@ -56,4 +54,23 @@ function getAttend() {
 }
 
 
+
+//---------------------   Comments ---------------------------------
+
+if(isset($_POST['commentSubmit'])){
+	$events_id = $_GET['eventid'];
+	$date_time = $_POST['todayTime'];
+	$comments = $_POST['comments'];
+	$comment = new Comment();
+	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
+}
+
+// function getComments() {
+// 	$GLOBALS['eventID'] = $_GET['eventid'];
+// 	error_log('function.php '.$GLOBALS['eventID']);
+// 	$allComments = new Comment();
+// 	$allComments->getAllComments($GLOBALS['eventID']);
+// }
 ?>
+
+

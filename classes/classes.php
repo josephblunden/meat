@@ -6,4 +6,5 @@
 	include('user.class.php');
   include('event.class.php');
 	include('attending.class.php');
+	include('comments.class.php');
 ?>

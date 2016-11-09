@@ -39,12 +39,39 @@
 				<?php
 				    }
 				    else {
-				        // form engine
-				        echo "<div>Greiðslan hefur verið gjaldfærð af reykningi yðar</div>";
-				    } ?>
+				        echo "<div class='form-check-svar'>Mæting skráð</div>";
+				 } ?>
+
+
+				 <div id="contactResponse"></div>
+
+
 		</div>
 	</div>
 
+	<div class="timaskraning-yfirlit-container">
+		<div class="timaskraning">
+			<ul class="margin-margin">
+				<li class="timaskraning-yfirlit-faersla">
+					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
+					<p class="timaskraning-yfirlit-haegri timaskraning-maett">Mætt</p>
+				</li>
+				<li class="timaskraning-yfirlit-faersla">
+					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
+					<p class="timaskraning-yfirlit-haegri timaskraning-leyfi">Í leyfi</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	  <!-- Modal HTML embedded directly into document -->
+<!--   <div id="ex1" style="display:none;">
+    <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
+  </div> -->
+
+  <!-- Link to open the modal -->
+<!--   <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+ -->
 
 
 <?php include('includes/footer.php')  ?>

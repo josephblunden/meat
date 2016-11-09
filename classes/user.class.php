@@ -40,7 +40,7 @@ class User {
       }
 
       echo '<tr>';
-        echo '<th scope="row">' .$userid. '<td><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td>' .$firstname. '</td> <td>' . $lastname.'</td><td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
+        echo '<th scope="row"><td class="users-profile-picture-td"><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td class="users-name-td">' .$firstname.' '.$lastname. ' </td> <td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
       echo '</tr>';
     }
 
@@ -74,6 +74,7 @@ public function getUserById($userid) {
      $userArr['email'] = $email;
      $userArr['user_role_id'] = $userRole;
      $userArr['profile_pic'] = $profilePic;
+     $userArr['userid'] = $userID;
    }
 
   // Close connection
