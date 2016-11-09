@@ -84,7 +84,7 @@ return $commentArr;
    $stmt->execute();
 
   }
-
+  // Deleting comments by comment id
   function deleteComment($commentID) {
     $db = $GLOBALS['gdb'];
     $mysqli = $db->getConnection();
@@ -93,6 +93,17 @@ return $commentArr;
       $stmt->bind_param("i", $commentID);
   	  $stmt->execute();
   		//header("Location: ./.php");
+  }
+
+  // Deleting comments by event id
+  function deleteComment($eventID) {
+    $db = $GLOBALS['gdb'];
+    $mysqli = $db->getConnection();
+
+      $stmt = $mysqli->prepare("DELETE FROM comments WHERE events_id=?");
+      $stmt->bind_param("i", $eventID);
+      $stmt->execute();
+      //header("Location: ./.php");
   }
 }
 
