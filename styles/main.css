@@ -735,6 +735,17 @@ button[name="commentSubmit"]:hover {
   width: 75%;
 }
 
+.delete-comment-button {
+  border: 1px solid white;
+  background-color: #3fb8af;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+
+.delete-comment-button:hover {
+  background-color: #F3F5EF;
+}
+
 .blocker {
   position: fixed;
   top: 0;
