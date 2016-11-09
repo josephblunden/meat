@@ -65,7 +65,10 @@
 			<div class="upper-comment">
 				<div class="userid-comment">
 					<?php
-						echo $commentArr[$i]['userID']."<br/>";
+					$userid = $commentArr[$i]['userID'];
+					$user = new User();
+					$userInfo = $user->getUserById($userid);
+						echo $userInfo['firstname'];
 					?>
 				</div>
 				<div class="date-comment">
