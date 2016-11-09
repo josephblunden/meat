@@ -15,7 +15,7 @@
                 </ul>
             </nav>
             <nav>
-                <?php if(loginSuperCheck()==t rue) { echo '<ul><li><a href="attendance.php">Skoða tímaskráningu</li></ul>'; }; ?>
+                <?php if(loginSuperCheck()==true) { echo '<ul><li><a href="attendance.php">Skoða tímaskráningu</li></ul>'; }; ?>
             </nav>
             <nav class="menu-signout">
                 <ul>

@@ -94,6 +94,9 @@
 .event input {
 	width: 300px;
 }
+.event textarea {
+	width: 300px;
+}
 .event textarea::placeholder {
 	font-family: $font;
 	font-size: 18px;

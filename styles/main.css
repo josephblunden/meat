@@ -526,6 +526,10 @@ form {
   width: 300px;
 }
 
+.event textarea {
+  width: 300px;
+}
+
 .event textarea::-webkit-input-placeholder {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
