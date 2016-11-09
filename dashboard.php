@@ -34,7 +34,6 @@
 
 						</label>
 					</div>
-					<!-- <input type="submit" class="btn btn-primary btn-lg btn-block" name="Submit" value="Submit"> -->
 				</form>
 				<?php
 				    }
@@ -42,10 +41,16 @@
 				        echo "<div class='form-check-svar'>Mæting skráð</div>";
 				 } ?>
 
-
 				 <div id="contactResponse"></div>
 
 
+		</div>
+	</div>
+	<div class="vidburdir-yfirlit-container">
+		<div class="vidburdir-yfirlit">
+			<div class="vidburdir-card-container">
+				<?php getEvents(); ?>
+			</div>
 		</div>
 	</div>
 		<div class="timaskraning-container">
@@ -59,13 +64,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="vidburdir-yfirlit-container">
-			<div class="vidburdir-yfirlit">
-				<div class="vidburdir-card-container">
-					<?php getEvents(); ?>
-				</div>
-			</div>
-		</div>
+
 
 
 	  <!-- Modal HTML embedded directly into document -->

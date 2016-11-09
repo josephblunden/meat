@@ -34,12 +34,15 @@ class Event {
                 <div class="event-content">
                   <div class="event-title">
                     '.$tilte.'
-                  </div>
+                  </div><br/>
                   <div class="event-date">
                     '.$eventDate.'
                   </div>
                   <div class="event-description">
                     '.$description.'
+                  </div>
+                  <div class="event-img">
+                    <img src="'.$eventImg.'" alt="event img" />
                   </div>
                 </div>
               </div>
