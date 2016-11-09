@@ -37,6 +37,12 @@ function getEvents() {
 	$alluser->getAllEvents();
 }
 
+function deleteEventAndCommnets($eventID) {
+        $allComments = new Comment();
+        $allComments->deleteCommentByEvents($eventID);
+				$allEvents = new Event();
+        $allEvents->deleteEvent($eventID);
+    }
 
 //---------------------   Attending ---------------------------------
 
