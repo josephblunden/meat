@@ -39,12 +39,14 @@
   						<strong>Well done!</strong> You successfully deleted the user.
 						</div>
 					<?php endif; ?>
-					<table class="table table-striped">
+					<!-- <table class="table table-striped">
 						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
-						<tbody>
+						<tbody> -->
+						<div class="timaskraning-nemandi-container">
 							<?php getAttend(); ?>
-						</tbody>
-					</table>
+						</div>
+		<!-- 				</tbody>
+					</table> -->
 				</div>
 			</div>
 	</div>

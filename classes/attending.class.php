@@ -33,17 +33,36 @@ class Attend {
 
     //var_dump($stmt);
     while ($stmt->fetch()) {
+      $status1 = $status;
+
       if($status === 1) {
-        $status = '<span class="tag tag-success">Mætt/ur</span>';
+        $status = 'timaskraning-maeting';
       } elseif($status === 2) {
-        $status = '<span class="tag tag-warning">Veik/ur</span>';
+        $status = 'timaskraning-veikindi';
       } else{
-        $status = '<span class="tag tag-warning">Í leyfi</span>';
+        $status = 'timaskraning-leyfi';
       }
 
-      echo '<tr>';
-        echo '<td>' .$_SESSION['firstname'].'</td><td>' .$status. '</td> <td>' . $statusTime.'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
-      echo '</tr>';
+      if($status1 === 1) {
+        $status1 = 'Mætt/ur';
+      } elseif($status1 === 2) {
+        $status1 = 'Veik/ur';
+      } else{
+        $status1 = 'Í leyfi';
+      }
+
+      // echo '<tr>';
+      //   echo '<td>' .$_SESSION['firstname'].'</td><td>' .$status. '</td> <td>' . $statusTime.'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
+      // echo '</tr>';
+
+      echo '<div class="timaskraning-stok '.$status.'">';
+        echo '
+          <p>'.$_SESSION['firstname'].'</p>
+          <p>'.$statusTime.'</p>
+          <p>'.$status1.'</p>
+        ';
+      echo '</div>';
+
     }
 
    /**

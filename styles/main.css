@@ -701,3 +701,34 @@ form {
 .users-name-td {
   width: 150px;
 }
+
+.timaskraning-stok {
+  background-color: gray;
+  width: 32%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.timaskraning-maeting {
+  background-color: #FFE400;
+}
+
+.timaskraning-veikindi {
+  background-color: rgba(255, 228, 0, 0.4);
+}
+
+.timaskraning-leyfi {
+  background-color: rgba(255, 228, 0, 0.1);
+}
+
+.timaskraning-nemandi-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
