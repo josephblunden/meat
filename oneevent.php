@@ -66,7 +66,7 @@
 
 
 <div class="comment-single-container">
-	<div class=".vidburdur-stakur-info-container-bakgrunnslaust">
+	<div class="comment-stakur-info">
 	<div>
 		<?php 
 			$userid = $commentArr[$i]['userID'];
@@ -96,8 +96,8 @@
 </div>
 
 <?php }?>
-
+<!-- 
 </div>
-</div>
+</div> -->
 
 <?php include('includes/footer.php'); ?>

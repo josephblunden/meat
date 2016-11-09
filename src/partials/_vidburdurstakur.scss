@@ -50,6 +50,8 @@ button[name="commentSubmit"] {
 	font-family: $font;
 	font-weight: 700;
 	margin-top: -100px;
+	flex-direction: row-reverse;
+	display: flex;
 }
 button[name="commentSubmit"]:hover {
 	background-color: $secondary-color;
@@ -57,4 +59,9 @@ button[name="commentSubmit"]:hover {
 
 .comment-single-container:nth-of-type(odd) {
 	background-color: white;
+}
+.comment-stakur-info {
+	width: 50% !important;
+	padding: 20px 0 !important;
+	justify-content: center !important;
 }
