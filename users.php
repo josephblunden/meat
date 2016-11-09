@@ -50,7 +50,15 @@
 						<tbody> -->
 
 						<div class="timaskraning-nemandi-container">
-							<h3 style="margin-bottom: 20px; margin-top: 10px">Notendur</h3>
+							<h3 style="margin-bottom: 20px; margin-top: 10px">Nemendur</h3>
+						</div>
+						
+						<div class="notendayfirlit-container">
+							<?php getUsers(); ?>
+						</div>
+
+						<div class="timaskraning-nemandi-container">
+							<h3 style="margin-bottom: 20px; margin-top: 30px">Kennarar</h3>
 						</div>
 						
 						<div class="notendayfirlit-container">

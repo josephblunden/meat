@@ -804,3 +804,8 @@ a.timaskraning-admin-takki:hover {
   background-image: url(http://placehold.it/300x300);
   background-size: cover;
 }
+
+.notendayfirlit-card p {
+  font-size: 14px;
+  margin-top: 2px;
+}
