@@ -20,7 +20,6 @@
 					</div>
 					<div class="form-group">
 						<label for="create_event_desc">Lýsing á Viðburði</label>
-						<!-- <input type="text" class="form-control" id="event_desc" name="create_event_desc" value="" placeholder="Lýsing á Viðburði"> -->
 						<textarea cols="40" rows="5" type="text" class="form-control" id="event_desc" name="create_event_desc" value="" placeholder="Lýsing á Viðburði"></textarea>
 					</div>
 					<div class="form-group">
