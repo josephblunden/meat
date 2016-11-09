@@ -5,29 +5,29 @@
 	include('includes/header.php');
 
 ?>
-<div class="container-fluid">
-	<div class="row">
+<div class="event-container">
+	<div class="event">
 		<div class="col-md-9 p-a-3">
 			<div class="row">
 				<form action="" method="post">
 					<div class="form-group">
 						<label for="create_event_name">Nafn Viðburðar</label>
-						<input type="text" class="form-control" name="create_event_name" value="">
+						<input type="text" class="form-control" name="create_event_name" value="" placeholder="Nafn Viðburðar">
 					</div>
 					<div class="form-group">
 						<label for="create_event_date">Dagsetning</label>
-						<input type="text" class="form-control" name="create_event_date" value="">
+						<input type="text" class="form-control" name="create_event_date" value="" placeholder="Dagsetning">
 					</div>
 					<div class="form-group">
 						<label for="create_event_desc">Lýsing á Viðburði</label>
-						<input type="text" class="form-control" name="create_event_desc" value="">
+						<input type="text" class="form-control" name="create_event_desc" value="" placeholder="Lýsing á Viðburði">
 					</div>
 					<div class="form-group">
 						<label for="create_event_img">Mynd</label>
-						<input type="text" class="form-control" name="create_event_img" value="">
+						<input type="text" class="form-control" name="create_event_img" value="" placeholder="Mynd">
 					</div>
 
-					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Create Event">
+					<input type="submit" class="event-button" value="Create Event">
 				</form>
 			</div>
 		</div>
