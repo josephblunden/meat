@@ -191,10 +191,70 @@
 	flex-wrap: wrap;
 }
 a.timaskraning-admin-takki {
-  appearance: button;
+  // appearance: button;
   text-decoration: none;
-  color: inital;
+  border-radius: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  // color: inital;
+  background-color: rgba(white, 0.7);
+  padding: 5px;
+  transition: background-color 0.5s ease;
+  text-transform: uppercase;
+  color: black;
+}
+a.timaskraning-admin-takki:hover {
+  // appearance: button;
+  // color: inital;
+  background-color: rgba(white, 0.1);
+  padding: 5px;
+  transition: background-color 0.5s ease;
 }
 .timaskraning-stok h4 {
   margin-bottom: 10px;
+}
+.timaskraning-bold {
+  font-weight: 700;
+}
+.timaskraning-stok p {
+  font-size: 14px;
+}
+.timaskraning-stok-takkar {
+  // border-top: 1px solid rgba(white, 0.3);
+  margin-top: 40px;
+  margin-bottom: -5px;
+}
+
+// .users-container {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+
+
+.notendayfirlit-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  flex-wrap: wrap !important;
+  width: 32%;
+
+.notendayfirlit {
+  width: 50%;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.notendayfirlit-card {
+  background-color: gray;
+  width: 32%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.notendayfirlit-img {
+  width: 50px;
+  height: 50px;
 }

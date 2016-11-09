@@ -28,8 +28,10 @@
 		$user->deleteUser($userid);
 	}
 ?>
-<div class="users-container">
-		<div class="users">
+
+
+<div class="timaskraning-container">
+		<div class="timaskraning">
 			<div class="row">
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
@@ -42,16 +44,17 @@
   						<strong>Well done!</strong> You successfully deleted the user.
 						</div>
 					<?php endif; ?>
-					<table class="table table-striped">
-						<thead> <tr> <th class="users-profile-picture-td">Profile Pic</th> <th class="users-name-td">Name</th> <th>Username</th><th>Email</th><th>User role</th> <th>Action</th> </tr> </thead>
-						<tbody>
+					<!-- <table class="table table-striped">
+						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
+						<tbody> -->
+						
+						<div class="notendayfirlit-container">
 							<?php getUsers(); ?>
-						</tbody>
-					</table>
+						</div>
+					
+		<!-- 				</tbody>
+					</table> -->
 				</div>
-				<!-- <div class="">
-					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
-				</div> -->
 			</div>
 	</div>
 </div>
