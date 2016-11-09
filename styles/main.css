@@ -526,7 +526,7 @@ form {
   width: 300px;
 }
 
-.event textarea {
+textarea[name="create_event_desc"] {
   width: 300px;
 }
 
@@ -600,6 +600,14 @@ textarea:focus {
   background-color: #F3F5EF;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+}
+
+.search-container {
+  margin: 0 auto;
+}
+
+.search {
+  margin-top: 15px;
 }
 
 .vidburdur-stakur-info-container {

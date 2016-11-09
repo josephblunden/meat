@@ -2,7 +2,7 @@
 class Event {
   private $_db;
   private $_mysqli;
-
+  //creating events
   public function createEvent($eventName, $eventDate, $eventDesc, $authorName, $eventImg) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
@@ -18,6 +18,7 @@ class Event {
   //  $//mysqli->close();
    header('Location: ./dashboard.php');
   }
+  //getting all events && serch query
   public function getAllEvents() {
     // Connecting to Database
     $db = $GLOBALS['gdb'];
@@ -32,9 +33,8 @@ class Event {
       $query = htmlspecialchars($query);
       // makes sure nobody uses SQL injection
     //  $query = $mysqli -> mysql_real_escape_string($query);
-
       $sql_select = "SELECT id, title, event_date, description, author FROM events WHERE title LIKE '%".$query."%'";
-}
+    }
    	// prepare and bind
     $stmt = $mysqli->prepare($sql_select);
      $stmt->execute();
@@ -89,7 +89,7 @@ class Event {
    return $eventArr;
  }
 
-
+ // updating events
  public function updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -104,7 +104,7 @@ class Event {
   // $//mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
-
+//deleting events by id
  public function deleteEvent($eventid) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -118,28 +118,6 @@ class Event {
   $stmt->close();
   //$//mysqli->close();
   //header('Location: ./users.php?updated=true');
- }
-
-
-public function search() {
-   // Connecting to Database
-   $db = $GLOBALS['gdb'];
-   $mysqli = $db->getConnection();
-
-      // prepare and bind (default without a search query)
-   $sql_select = "SELECT id, title, event_date, description, author FROM events";
-
-   // prepate with a search query
-   if(isset($_GET['query'])) {
-     $query = $_GET['query'];
-     // changes characters used in html to their equivalents, for example: < to &gt;
-     $query = htmlspecialchars($query);
-     // makes sure nobody uses SQL injection
-   //  $query = $mysqli -> mysql_real_escape_string($query);
-
-     $sql_select = "SELECT id, title, event_date, description, author FROM events WHERE title LIKE '%".$query."%'";
-   }
-
  }
 
 }
