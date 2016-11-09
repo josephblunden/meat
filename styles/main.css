@@ -657,10 +657,16 @@ textarea:focus {
   width: 100%;
 }
 
+.comment-form-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 textarea {
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #e6e6e6;
+  border-radius: 0px;
+  border: 0px solid #e6e6e6;
   height: 100px;
   padding: 20px;
   font-size: 18px;
@@ -668,21 +674,13 @@ textarea {
 }
 
 button[name="commentSubmit"] {
-  padding: 10px;
-  border-radius: 35px;
-  border: 1px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 0px;
+  border: 0px solid #e6e6e6;
   background-color: #3fb8af;
   font-size: 14px;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  margin-top: -100px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 button[name="commentSubmit"]:hover {
