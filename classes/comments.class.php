@@ -73,22 +73,19 @@ public function getCommentsById($commentID) {
   return $commentArr;
 }
 
-public function updateComments($comments, $dateTime, $commentID) {
- // Connecting to Database
- $db = $GLOBALS['gdb'];
- $mysqli = $db->getConnection();
+  public function updateComments($comments, $dateTime, $commentID) {
+    // Connecting to Database
+    $db = $GLOBALS['gdb'];
+    $mysqli = $db->getConnection();
 
- // prepare and bind
- $stmt = $mysqli->prepare("UPDATE comments SET comments=?, date_time=? WHERE id=?");
- $stmt->bind_param("ssi", $comments, $dateTime, $commentID);
- $stmt->execute();
+    // prepare and bind
+    $stmt = $mysqli->prepare("UPDATE comments SET comments=?, date_time=? WHERE id=?");
+    $stmt->bind_param("ssi", $comments, $dateTime, $commentID);
+    $stmt->execute();
 
- // $stmt->close();
- // $mysqli->close();
- //header('Location: ./users.php?updated=true');
-}
+  }
 
-
+// Deleting comment by comment id
 function deleteComment($commentID) {
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
