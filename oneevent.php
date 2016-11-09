@@ -32,10 +32,10 @@
 <div class="vidburdur-stakur-info-container">
 	<div class="vidburdur-stakur-info">
 		<?php if(loginSuperCheck()==true) { echo '    <a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'">
-					<button class="edit-button">Edit</button>
+					<button class="edit-button delete-comment-button">Edit</button>
 				</a>
 				<a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'">
-					<button class="delete-button">Delete</button>
+					<button class="delete-button delete-comment-button">Delete</button>
 				</a>'; }; ?>
 	</div>
 </div>
