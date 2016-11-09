@@ -64,6 +64,10 @@ function getAttend() {
 	$alluser = new Attend();
 	$alluser->getAllAttendance($_SESSION['userid']);
 }
+function getAttendForStudents() {
+	$alluser = new Attend();
+	$alluser->getAllAttendanceForStudent($_GET['userid']);
+}
 function getAttendDashboard() {
 	$alluser = new Attend();
 	$alluser->getAllAttendanceDash($_SESSION['userid']);
