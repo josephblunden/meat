@@ -17,7 +17,6 @@
 		$profilePic = $_POST['update_profile_pic'];
 
 		$user = new User();
-
 		$user->updateUser($firstname, $lastname, $username, $password, $email, $userRole, $profilePic, $userid);
 	}
 
@@ -30,44 +29,32 @@
 	}
 ?>
 
-
-
 <div class="timaskraning-container">
 		<div class="timaskraning">
 			<div class="row">
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
-						<div class="alert alert-success" role="alert">
-  						<strong>Well done!</strong> You successfully update the user.
-						</div>
+					<div class="alert alert-success" role="alert">
+						<strong>Well done!</strong> You successfully update the user.
+					</div>
 					<?php endif; ?>
 					<?php if(isset($_GET['delete']) && $_GET['delete'] == 'true') : ?>
-						<div class="alert alert-danger" role="alert">
-  						<strong>Well done!</strong> You successfully deleted the user.
-						</div>
+					<div class="alert alert-danger" role="alert">
+						<strong>Well done!</strong> You successfully deleted the user.
+					</div>
 					<?php endif; ?>
-					<!-- <table class="table table-striped">
-						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
-						<tbody> -->
-
-						<div class="timaskraning-nemandi-container">
-							<h3 style="margin-bottom: 20px; margin-top: 10px">Nemendur</h3>
-						</div>
-						
-						<div class="notendayfirlit-container">
-							<?php getUsers(); ?>
-						</div>
-
-						<div class="timaskraning-nemandi-container">
-							<h3 style="margin-bottom: 20px; margin-top: 30px">Kennarar</h3>
-						</div>
-						
-						<div class="notendayfirlit-container">
-							<?php getUsers2(); ?>
-						</div>
-					
-		<!-- 				</tbody>
-					</table> -->
+					<div class="timaskraning-nemandi-container">
+						<h3 style="margin-bottom: 20px; margin-top: 10px">Nemendur</h3>
+					</div>
+					<div class="notendayfirlit-container">
+						<?php getUsers(); ?>
+					</div>
+					<div class="timaskraning-nemandi-container">
+						<h3 style="margin-bottom: 20px; margin-top: 30px">Kennarar</h3>
+					</div>
+					<div class="notendayfirlit-container">
+						<?php getUsers2(); ?>
+					</div>
 				</div>
 			</div>
 	</div>
