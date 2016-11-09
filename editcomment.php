@@ -1,4 +1,3 @@
-
 <?php
 include('includes/config.php');
 loginCheck();
@@ -10,8 +9,7 @@ include('includes/header.php');
 		$comment = new Comment();
 		$commentInfo = $event->getCommentsById($commentID);
 	};
-	?>
-
+?>
 
   <form method='POST' action='../events.php?update=true'>
 		<div class="form-group">
@@ -21,7 +19,5 @@ include('includes/header.php');
 		<input type="hidden" name="update_commentID" value="<?php echo $commentID ?>">
 		<input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Comment">
   	</form>
-
-
 
 <?php include('footer.php')  ?>
