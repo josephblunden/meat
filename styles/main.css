@@ -511,6 +511,7 @@ form {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: white;
+  padding: 20px 0;
 }
 
 .event-container label {
@@ -523,6 +524,30 @@ form {
 
 .event input {
   width: 300px;
+}
+
+.event textarea::-webkit-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea::-moz-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea:-ms-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
 }
 
 .event input::-webkit-input-placeholder {
@@ -557,6 +582,14 @@ form {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 700;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .event-button:hover {
