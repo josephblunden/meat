@@ -206,8 +206,7 @@ public function updateAttendance($status, $attendid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
  $mysqli = $db->getConnection();
-error_log($status);
-error_log($attendid);
+
  // prepare and bind
  $stmt = $mysqli->prepare("UPDATE checkin SET status=? WHERE id=?");
  $stmt->bind_param("ii", $status, $attendid);
