@@ -22,7 +22,7 @@
 					</div>
 					<div class="form-group">
 						<label for="update_event_date">Event Date</label>
-						<input type="datetime-local" class="form-control" name="update_event_date" value="<?php echo $eventInfo['event_date']; ?>">
+						<input type="text" class="form-control" name="update_event_date" value="<?php echo $eventInfo['event_date']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="update_description">Description</label>

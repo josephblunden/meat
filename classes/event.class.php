@@ -10,7 +10,7 @@ class Event {
 
    // prepare and bind
    $stmt = $mysqli->prepare("INSERT INTO events(title, event_date, description, author, event_img) VALUES (?, ?, ?, ?, ?)");
-   $stmt->bind_param("ssss", $eventName, $eventDate, $eventDesc, $authorName, $eventImg);
+   $stmt->bind_param("sssss", $eventName, $eventDate, $eventDesc, $authorName, $eventImg);
 
    $stmt->execute();
 
@@ -40,9 +40,6 @@ class Event {
                   </div>
                   <div class="event-description">
                     '.$description.'
-                  </div>
-                  <div class="event-img">
-                    <img src="'.$eventImg.'" alt="event img" />
                   </div>
                 </div>
               </div>
