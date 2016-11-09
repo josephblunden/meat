@@ -608,6 +608,15 @@ textarea:focus {
           justify-content: center;
 }
 
+.vidburdur-stakur-info-container-bakgrunnslaust {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .vidburdur-stakur-info {
   width: 50%;
   padding: 20px 0;
@@ -618,6 +627,63 @@ textarea:focus {
 
 .vidburdur-stakur-info img {
   max-width: 100%;
+}
+
+.vidburdur-stakur-info h2 {
+  width: 100%;
+}
+
+.comment-vidburdur-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.comment-single-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.vidburdur-stakur-mynd {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  height: 100px;
+  padding: 20px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+}
+
+button[name="commentSubmit"] {
+  padding: 10px;
+  border-radius: 35px;
+  border: 1px solid #e6e6e6;
+  background-color: #3fb8af;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  margin-top: -100px;
+}
+
+button[name="commentSubmit"]:hover {
+  background-color: #F3F5EF;
+}
+
+.comment-single-container:nth-of-type(odd) {
+  background-color: white;
 }
 
 .blocker {
