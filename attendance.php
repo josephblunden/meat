@@ -44,7 +44,7 @@
 						<tbody> -->
 						<div class="timaskraning-nemandi-container">
 							<?php 
-								echo '<h2> '.$_SESSION['firstname'].'</h2>';
+								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$_SESSION['firstname'].'</h3>';
 							?>
 						</div>
 						<div class="timaskraning-nemandi-container">

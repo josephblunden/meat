@@ -61,7 +61,7 @@ class Attend {
       echo '<div class="timaskraning-stok '.$status.'">';
         echo '
           <h4>'.$statusDay.'</h4>
-          <p>'.$statusTime.'</p>
+          <p>Skráð klukkan:'.$statusTime.'</p>
           <p>'.$status1.'</p>
           <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
           <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
