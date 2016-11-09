@@ -27,7 +27,7 @@ class Attend {
 
   	// prepare and bind
 
-  	$stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY status_day DESC");
+  	$stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY id DESC");
 
     $stmt->execute();
     $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
@@ -58,7 +58,7 @@ class Attend {
       // echo '</tr>';
 
 
-      echo '<div class="timaskraning-stok '.$status.'">';
+      echo '<div class="timaskraning-stok '.$userid.' '.$status.'">';
         echo '
           <h4>'.$statusDay.'</h4>
           <p><span class="timaskraning-bold">'.$status1.'</span></p>

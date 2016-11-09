@@ -45,9 +45,9 @@ class User {
           <p>'.$email.'</p>
           <p></p>
           <p></p>
-          <div class="timaskraning-stok-takkar">
-          <a class="timaskraning-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
           </div>
 
 
@@ -83,9 +83,9 @@ class User {
           <p>'.$email.'</p>
           <p></p>
           <p></p>
-          <div class="timaskraning-stok-takkar">
-          <a class="timaskraning-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
           </div>
 
 
