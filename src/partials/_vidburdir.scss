@@ -83,6 +83,7 @@
 	display: flex;
 	justify-content: center;
 	background-color: white;
+	padding: 20px 0;
 }
 .event-container label {
 	display: none;
@@ -92,6 +93,11 @@
 }
 .event input {
 	width: 300px;
+}
+.event textarea::placeholder {
+	font-family: $font;
+	font-size: 18px;
+	padding-top: 7px;
 }
 .event input::placeholder {
 	font-family: $font;
@@ -109,7 +115,12 @@
 	font-size: 18px;
 	font-weight: 700;
 }
-
+input:focus {
+	outline:none;
+}
+textarea:focus {
+	outline:none;
+}
 
 
 .event-button:hover {
