@@ -676,6 +676,13 @@ button[name="commentSubmit"] {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   margin-top: -100px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 button[name="commentSubmit"]:hover {
@@ -684,6 +691,14 @@ button[name="commentSubmit"]:hover {
 
 .comment-single-container:nth-of-type(odd) {
   background-color: white;
+}
+
+.comment-stakur-info {
+  width: 50% !important;
+  padding: 20px 0 !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
 
 .blocker {
