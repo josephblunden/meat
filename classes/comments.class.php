@@ -96,7 +96,7 @@ return $commentArr;
   }
 
   // Deleting comments by event id
-  function deleteComment($eventID) {
+  function deleteCommentByEvents($eventID) {
     $db = $GLOBALS['gdb'];
     $mysqli = $db->getConnection();
 
