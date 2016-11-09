@@ -10,7 +10,6 @@
 		$eventInfo = $event->getEventsById($eventid);
 	}
 
-
 	if(isset($_GET['update']) && $_GET['update'] == 'true') {
 		//$commentID = $_POST['update_commentID'];
 		$comments = $_POST['update_comments'];
@@ -26,8 +25,6 @@
 		$comment = new Comment();
 		$comment->deleteComment($commentID);
 	}
-
-
 ?>
 <div class="oneevent-container">
 <div class="container-fluid">
@@ -63,65 +60,42 @@
 		<button type='submit' name='commentSubmit'>Comment</button>
 </form>
 </div>
-<div class="">
-<?php
-
+<div class="comment-container">
+	<?php
 		$GLOBALS['eventID'] = $_GET['eventid'];
 		error_log('function.php '.$GLOBALS['eventID']);
 		$allComments = new Comment();
 		$commentArr = $allComments->getAllComments($GLOBALS['eventID']);
-		var_dump($commentArr[2]['userID']);
 		for ($i=0; $i < count($commentArr); $i++) {
-			// echo $commentArr[$i]['userID']."<br/>";
-			// echo $commentArr[$i]['dateTime']."<br/>";
-			// echo $commentArr[$i]['comments']."<br/>";
-
-
-				//var_dump($comment);
-
-
-
-
-
-		 ?>
-
+	?>
 <table class="table table-striped">
 	<tbody>
 		<div class='comment-box'>
 			<div class="upper-comment">
 				<div class="userid-comment">
 					<?php
-
-					echo $commentArr[$i]['userID']."<br/>";
+						echo $commentArr[$i]['userID']."<br/>";
 					?>
 				</div>
 				<div class="date-comment">
 					<?php
-
-					echo $commentArr[$i]['dateTime']."<br/>";
+						echo $commentArr[$i]['dateTime']."<br/>";
 					?>
 				</div>
 			</div>
 			<p>
 				<?php
-
-				echo $commentArr[$i]['comments']."<br/>";
+					echo $commentArr[$i]['comments']."<br/>";
 				?>
 			</p>
-
-					<div class'buttons buttons-comments'>
-					<a class='edit-button-a' href='editcomment.php?edit=true&commentID=".$commentID."'>
-					<button class='edit-button'>Edit</button></a>
-					<a class='delete-button-a' href='oneevent.php?delete=true&commentID=".$commentID."'>
-					<button class='delete-button'>Delete</button></a>
-					</div>
-
-
-
+			<div class'buttons buttons-comments'>
+				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=".$commentID."'>
+					<button class='delete-button'>Delete</button>
+				</a>
+			</div>
 		</div>
 	</tbody>
 </table>
-
 <?php }?>
 </div>
 </div>

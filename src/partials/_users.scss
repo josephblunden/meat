@@ -171,3 +171,25 @@
 .users-name-td {
 	width: 150px;
 }
+
+.timaskraning-stok {
+	background-color: gray;
+	width: 32%;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+.timaskraning-maeting {
+	background-color: $primary-color;
+}
+.timaskraning-veikindi {
+	background-color: rgba($primary-color, 0.4)
+}
+.timaskraning-leyfi {
+	background-color: rgba($primary-color, 0.1)
+}
+.timaskraning-nemandi-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}

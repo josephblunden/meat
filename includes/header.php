@@ -26,7 +26,7 @@
 
 <?php
   if (!stripos($_SERVER['REQUEST_URI'], 'login.php')) {
-    echo '<div class="header">
+    echo '<div class="header sticky fixed">
     <div class="skitamix"></div>
     <a href="dashboard.php"><h2>'.$_SESSION['firstname'].'</h2></a>
     <a href="#" class="toggle-overlay open-menu">VALMYND</a>
