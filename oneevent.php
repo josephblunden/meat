@@ -49,7 +49,6 @@
 <div class="comment-container">
 	<?php
 		$GLOBALS['eventID'] = $_GET['eventid'];
-		error_log('function.php '.$GLOBALS['eventID']);
 		$allComments = new Comment();
 		$commentArr = $allComments->getAllComments($GLOBALS['eventID']);
 		for ($i=0; $i < count($commentArr); $i++) {
