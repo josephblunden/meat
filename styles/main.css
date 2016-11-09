@@ -596,10 +596,6 @@ form {
   transition: all .5s ease;
 }
 
-.typpi-og-pika {
-  font-size: 190px;
-}
-
 .login-form {
   padding: 40px 30px;
   border-radius: 50px;
@@ -735,4 +731,12 @@ form {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+a.timaskraning-admin-takki {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  text-decoration: none;
+  color: inital;
 }

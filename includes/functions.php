@@ -40,13 +40,15 @@ function getEvents() {
 
 //---------------------   Attending ---------------------------------
 
-$_POST['todayTime'] = date("j F, Y, g:i a");
+$_POST['todayDay'] = date("j F, Y");
+$_POST['todayTime'] = date("g:i a");
 $GLOBALS['status'] = 0;
 if(isset($_POST['create_status']) && !empty($_POST['create_status'])) {
 	$GLOBALS['status'] = $_POST['create_status'];
 	$statusTime = $_POST['todayTime'];
+	$statusDay = $_POST['todayDay'];
 	$event = new Attend();
-	$event->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime);
+	$event->createNewAttendance($_SESSION['userid'], $GLOBALS['status'], $statusTime, $statusDay);
 }
 function getAttend() {
 	$alluser = new Attend();

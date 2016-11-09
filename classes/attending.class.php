@@ -3,14 +3,14 @@ class Attend {
  private $_db;
  private $_mysqli;
 
- public function createNewAttendance($userid, $status, $statusTime) {
+ public function createNewAttendance($userid, $status, $statusTime, $statusDay) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
  	// prepare and bind
- 	$stmt = $mysqli->prepare("INSERT INTO checkin(user_id, status, status_time) VALUES(?, ?, ?)");
- 	$stmt->bind_param("iis", $userid, $status, $statusTime);
+ 	$stmt = $mysqli->prepare("INSERT INTO checkin(user_id, status, status_time, status_day) VALUES(?, ?, ?, ?)");
+ 	$stmt->bind_param("iiss", $userid, $status, $statusTime, $statusDay);
 
  	$stmt->execute();
 
@@ -26,9 +26,9 @@ class Attend {
    $mysqli = $db->getConnection();
 
   	// prepare and bind
-  	$stmt = $mysqli->prepare("SELECT id, status, status_time FROM checkin WHERE user_id=$userid");
+  	$stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY status_day DESC");
     $stmt->execute();
-    $stmt->bind_result($attendid, $status, $statusTime);
+    $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
 
 
     //var_dump($stmt);
@@ -57,9 +57,11 @@ class Attend {
 
       echo '<div class="timaskraning-stok '.$status.'">';
         echo '
-          <p>'.$_SESSION['firstname'].'</p>
           <p>'.$statusTime.'</p>
+          <p>'.$_SESSION['firstname'].'</p>
           <p>'.$status1.'</p>
+          <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
+          <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
         ';
       echo '</div>';
 
@@ -81,16 +83,17 @@ public function getAttendanceById($userid) {
   $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("SELECT status, status_time FROM checkin	WHERE user_id = ?");
+   $stmt = $mysqli->prepare("SELECT status, status_time, status_day FROM checkin	WHERE user_id = ?");
    $stmt->bind_param('i', $userid);
    $stmt->execute();
-   $stmt->bind_result( $status, $statusTime);
+   $stmt->bind_result( $status, $statusTime, $statusDay);
 
    // Only returning info from 1 user so I will create an array that I can easily work with on my page
    $attendArr;
    while ($stmt->fetch()) {
      $attendArr['status'] = $status;
      $attendArr['status_time'] = $statusTime;
+     $attendArr['status_day'] = $statusDay;
 
    }
 
@@ -100,14 +103,14 @@ public function getAttendanceById($userid) {
   return $attendArr;
 }
 
-public function updateAttendance($status, $statusTime, $attendid) {
+public function updateAttendance($status, $statusTime, $statusDay, $attendid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
  $mysqli = $db->getConnection();
 
  // prepare and bind
- $stmt = $mysqli->prepare("UPDATE checkin SET status=?, status_time=? WHERE id=?");
- $stmt->bind_param("isi", $status, $statusTime, $attendid);
+ $stmt = $mysqli->prepare("UPDATE checkin SET status=?, status_time=?, status_day=? WHERE id=?");
+ $stmt->bind_param("isi", $status, $statusTime, $statusDay, $attendid);
  $stmt->execute();
 
  // $stmt->close();
