@@ -6,7 +6,7 @@
 	include('includes/header.php');
 
 	//Check if parameter exists and is set to true
-	if(isset($_GET['one']) && $_GET['one']) {
+	if((isset($_GET['one']) && $_GET['one']) || (isset($_GET['delete']) && $_GET['delete'] == 'true')) {
 		$eventid = $_GET['eventid'];
 		$event = new Event();
 		$eventInfo = $event->getEventsById($eventid);
@@ -74,7 +74,7 @@
 				?>
 			</p>
 			<div class'buttons buttons-comments'>
-				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=".$commentID."'>
+				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=<?php echo $commentArr[$i]['commentID'] ?>&eventid=<?php echo $eventid ?>'> 
 					<button class='delete-button'>Delete</button>
 				</a>
 			</div>

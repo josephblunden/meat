@@ -59,7 +59,10 @@ function getAttend() {
 	$alluser = new Attend();
 	$alluser->getAllAttendance($_SESSION['userid']);
 }
-
+function getAttendDashboard() {
+	$alluser = new Attend();
+	$alluser->getAllAttendanceDash($_SESSION['userid']);
+}
 
 
 //---------------------   Comments ---------------------------------
