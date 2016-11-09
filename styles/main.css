@@ -503,6 +503,101 @@ form {
   display: inline-block;
 }
 
+.event-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  padding: 20px 0;
+}
+
+.event-container label {
+  display: none;
+}
+
+.event {
+  padding: 20px 0;
+}
+
+.event input {
+  width: 300px;
+}
+
+.event textarea::-webkit-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea::-moz-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea:-ms-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event textarea::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding-top: 7px;
+}
+
+.event input::-webkit-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+.event input::-moz-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+.event input:-ms-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+.event input::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+.event-button {
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid #979797;
+  padding: 10px;
+  display: table;
+  width: 100%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.event-button:hover {
+  background-color: #F3F5EF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
 .vidburdur-stakur-info-container {
   display: -webkit-box;
   display: -ms-flexbox;

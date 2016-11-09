@@ -79,6 +79,54 @@
 	position: relative;
 	display: inline-block;
 }
+.event-container {
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	padding: 20px 0;
+}
+.event-container label {
+	display: none;
+}
+.event {
+	padding: 20px 0;
+}
+.event input {
+	width: 300px;
+}
+.event textarea::placeholder {
+	font-family: $font;
+	font-size: 18px;
+	padding-top: 7px;
+}
+.event input::placeholder {
+	font-family: $font;
+	font-size: 18px;
+}
+.event-button {
+	border-radius: 50px;
+	background-color: white;
+	border: 1px solid $grar;
+	padding: 10px;
+	display: table;
+	width: 100%;
+	transition: all .5s ease;
+	font-family: $font;
+	font-size: 18px;
+	font-weight: 700;
+}
+input:focus {
+	outline:none;
+}
+textarea:focus {
+	outline:none;
+}
+
+
+.event-button:hover {
+	background-color: $secondary-color;
+	transition: all .5s ease;
+}
 // .event-button {
 // 	border-radius: 50px;
 // 	background-color: white;
