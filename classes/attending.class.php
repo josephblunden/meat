@@ -128,17 +128,18 @@ public function getAttendanceById($userid) {
   $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("SELECT status, status_time, status_day FROM checkin	WHERE user_id = ?");
+   $stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin	WHERE user_id = ?");
    $stmt->bind_param('i', $userid);
    $stmt->execute();
-   $stmt->bind_result( $status, $statusTime, $statusDay);
+   $stmt->bind_result($attendID, $status, $statusTime, $statusDay);
 
    // Only returning info from 1 user so I will create an array that I can easily work with on my page
    $attendArr;
    while ($stmt->fetch()) {
      $attendArr['status'] = $status;
-     $attendArr['status_time'] = $statusTime;
-     $attendArr['status_day'] = $statusDay;
+     $attendArr['statusTime'] = $statusTime;
+     $attendArr['statusDay'] = $statusDay;
+     $attendArr['attendID'] = $attendID;
 
    }
 
@@ -147,15 +148,41 @@ public function getAttendanceById($userid) {
   // $//mysqli->close();
   return $attendArr;
 }
+public function getAttendanceByAttendId($attendID) {
+  // Connecting to Database
+  $db = $GLOBALS['gdb'];
+  $mysqli = $db->getConnection();
 
-public function updateAttendance($status, $statusTime, $statusDay, $attendid) {
+   // prepare and bind
+   $stmt = $mysqli->prepare("SELECT status, status_time, status_day FROM checkin	WHERE id = ?");
+   $stmt->bind_param('i', $attendID);
+   $stmt->execute();
+   $stmt->bind_result($status, $statusTime, $statusDay);
+
+   // Only returning info from 1 user so I will create an array that I can easily work with on my page
+   $attendInfo;
+   while ($stmt->fetch()) {
+     $attendInfo['attendID'] = $attendID;
+     $attendInfo['status'] = $status;
+     $attendInfo['status_time'] = $statusTime;
+     $attendInfo['status_day'] = $statusDay;
+   }
+
+  // Close connection
+  $stmt->close();
+  // $//mysqli->close();
+  return $attendInfo;
+}
+
+public function updateAttendance($status, $attendid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
  $mysqli = $db->getConnection();
-
+error_log($status);
+error_log($attendid);
  // prepare and bind
- $stmt = $mysqli->prepare("UPDATE checkin SET status=?, status_time=?, status_day=? WHERE id=?");
- $stmt->bind_param("isi", $status, $statusTime, $statusDay, $attendid);
+ $stmt = $mysqli->prepare("UPDATE checkin SET status=? WHERE id=?");
+ $stmt->bind_param("ii", $status, $attendid);
  $stmt->execute();
 
  // $stmt->close();

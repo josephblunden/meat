@@ -5,9 +5,11 @@
 	include('includes/header.php');
 
 	if(isset($_GET['edit']) && $_GET['edit'] == 'true') {
-		$attendid = $_GET['attendid'];
+		$attendID = $_GET['attendid'];
+		$userid = $_SESSION['userid'];
+		error_log($_SESSION['userid']);
 		$attend = new Attend();
-		$attendInfo = $attend->getAttendanceById($attendid);
+		$attendInfo = $attend->getAttendanceById($userid);
 	};
 
 ?>
@@ -16,10 +18,6 @@
 		<div class="col-md-9 p-a-3">
 			<div class="row">
 				<form action="attendance.php?update=true" method="post">
-					<div class="form-group">
-						<label for="update_status_time">Time</label>
-						<input type="text" class="form-control" name="update_status_time" value="<?php echo $attendInfo['status_time']; ?>">
-					</div>
 				    <div class="form-check">
 				      <label class="form-check-label">
 				        <input type="radio" class="form-check-input" name="update_status"
@@ -50,7 +48,7 @@
                 Í Leyfi
               </label>
             </div>
-					<input type="hidden" name="update_attendid" value="<?php echo $attendid ?>">
+					<input type="hidden" name="update_attendid" value="<?php echo $_GET['attendid']; ?>">
 					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Attend">
 				</form>
 			</div>
