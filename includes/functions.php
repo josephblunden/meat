@@ -43,13 +43,6 @@ function deleteEventAndCommnets($eventID) {
         $allEvents->deleteEvent($eventID);
     }
 
-function deleteEventAndCommnets($eventID) {
-        $allComments = new Comment();
-        $allComments->deleteCommentByEvents($eventID);
-				$allEvents = new Event();
-        $allEvents->deleteEvent($eventID);
-    }
-
 //---------------------   Attending ---------------------------------
 
 $_POST['todayDay'] = date("j F, Y");

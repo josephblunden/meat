@@ -19,8 +19,6 @@
 	//Check if parameter exists and is set to true
 	if(isset($_GET['delete']) && $_GET['delete'] == 'true') {
 		$eventID = $_GET['eventid'];
-
-
 		deleteEventAndCommnets($eventID);
 	}
 ?>
