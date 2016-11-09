@@ -85,12 +85,9 @@ class Attend {
    $mysqli = $db->getConnection();
 
    // prepare and bind
-
    $stmt = $mysqli->prepare("SELECT id, status, status_time, status_day FROM checkin WHERE user_id=$userid ORDER BY status_day DESC");
-
-    $stmt->execute();
-    $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
-
+   $stmt->execute();
+   $stmt->bind_result($attendid, $status, $statusTime, $statusDay);
 
     //var_dump($stmt);
     while ($stmt->fetch()) {
@@ -117,8 +114,6 @@ class Attend {
           <h4>'.$statusDay.'</h4>
           <p>'.$statusTime.'</p>
           <p>'.$status1.'</p>
-          <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
-          <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
         ';
       echo '</div>';
 
