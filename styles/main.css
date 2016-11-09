@@ -697,6 +697,30 @@ button[name="commentSubmit"]:hover {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.date-comment, .comment-first-name {
+  font-size: 12px;
+}
+
+.comment-first-name {
+  margin-right: 20px;
+  width: 20%;
+}
+
+.comment-first-name p {
+  font-weight: 700;
+}
+
+.vidburdur-nafn-fyrirsogn {
+  margin: 15px 0 10px 0;
+}
+
+.vidburdur-comment-comment {
+  width: 75%;
 }
 
 .blocker {
@@ -955,6 +979,18 @@ button[name="commentSubmit"]:hover {
 
 .timaskraning-leyfi {
   background-color: #dad8a7;
+}
+
+.timaskraning-maeting:hover {
+  background-color: #5cb799;
+}
+
+.timaskraning-veikindi:hover {
+  background-color: #ff6c6a;
+}
+
+.timaskraning-leyfi:hover {
+  background-color: #cbc883;
 }
 
 .timaskraning-nemandi-container {

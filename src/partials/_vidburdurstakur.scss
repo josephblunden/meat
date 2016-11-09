@@ -66,4 +66,21 @@ button[name="commentSubmit"]:hover {
 	width: 50% !important;
 	padding: 20px 0 !important;
 	justify-content: center !important;
+	display: flex;
+}
+.date-comment, .comment-first-name {
+	font-size: 12px;
+}
+.comment-first-name {
+	margin-right: 20px;
+	width: 20%;
+}
+.comment-first-name p {
+	font-weight: 700;
+}
+.vidburdur-nafn-fyrirsogn {
+	margin: 15px 0 10px 0;
+}
+.vidburdur-comment-comment {
+	width: 75%;
 }
