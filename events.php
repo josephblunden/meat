@@ -5,19 +5,6 @@
 	include('includes/header.php');
 
 	//Check if parameter exists and is set to true
-	if(isset($_GET['update']) && $_GET['update'] == 'true') {
-		$eventid = $_POST['update_eventid'];
-		$tilte = $_POST['update_title'];
-		$eventDate = $_POST['update_event_date'];
-		$description = $_POST['update_description'];
-		$author = $_POST['update_author'];
-		$eventImg = $_POST['update_image'];
-
-		$event = new Event();
-		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg);
-	}
-
-	//Check if parameter exists and is set to true
 	if(isset($_GET['delete']) && $_GET['delete'] == 'true') {
 		$eventID = $_GET['eventid'];
 		deleteEventAndCommnets($eventID);

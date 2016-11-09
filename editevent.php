@@ -15,7 +15,7 @@
 	<div class="row">
 		<div class="col-md-9 p-a-3">
 			<div class="row">
-				<form action="events.php?update=true" method="post">
+				<form action="dashboard.php?update=true" method="post">
 					<div class="form-group">
 						<label for="update_title">Title</label>
 						<input type="text" class="form-control" name="update_title" value="<?php echo $eventInfo['title']; ?>">
