@@ -11,9 +11,10 @@
 		$eventDate = $_POST['update_event_date'];
 		$description = $_POST['update_description'];
 		$author = $_POST['update_author'];
+		$eventImg = $_POST['update_image'];
 
 		$event = new Event();
-		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author);
+		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg);
 	}
 
 	//Check if parameter exists and is set to true

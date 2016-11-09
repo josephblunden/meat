@@ -3,14 +3,14 @@ class Event {
   private $_db;
   private $_mysqli;
 
-  public function createEvent($eventName, $eventDate, $eventDesc, $authorName) {
+  public function createEvent($eventName, $eventDate, $eventDesc, $authorName, $eventImg) {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
    $mysqli = $db->getConnection();
 
    // prepare and bind
-   $stmt = $mysqli->prepare("INSERT INTO events(title, event_date, description, author) VALUES (?, ?, ?, ?)");
-   $stmt->bind_param("ssss", $eventName, $eventDate, $eventDesc, $authorName);
+   $stmt = $mysqli->prepare("INSERT INTO events(title, event_date, description, author, event_img) VALUES (?, ?, ?, ?, ?)");
+   $stmt->bind_param("ssss", $eventName, $eventDate, $eventDesc, $authorName, $eventImg);
 
    $stmt->execute();
 
@@ -24,9 +24,9 @@ class Event {
     $mysqli = $db->getConnection();
 
    	// prepare and bind
-   	$stmt = $mysqli->prepare("SELECT id, title, event_date, description, author FROM events");
+   	$stmt = $mysqli->prepare("SELECT id, title, event_date, description, author, event_img FROM events");
      $stmt->execute();
-     $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author);
+     $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author, $eventImg);
      while ($stmt->fetch()) {
 
         echo'<a href="oneevent.php?one=true&eventid='.$eventid.'">
@@ -58,10 +58,10 @@ class Event {
    $mysqli = $db->getConnection();
 
     // prepare and bind
-    $stmt = $mysqli->prepare("SELECT title, event_date, description, author FROM events	WHERE id =?");
+    $stmt = $mysqli->prepare("SELECT title, event_date, description, author, event_img FROM events	WHERE id =?");
     $stmt->bind_param('i', $eventid);
     $stmt->execute();
-    $stmt->bind_result($tilte, $eventDate, $description, $author);
+    $stmt->bind_result($tilte, $eventDate, $description, $author, $eventImg);
 
     // Only returning info from 1 user so I will create an array that I can easily work with on my page
     $eventArr;
@@ -71,6 +71,7 @@ class Event {
       $eventArr['description'] = $description;
       $eventArr['author'] = $author;
       $eventArr['eventid'] = $eventid;
+      $eventArr['eventImg'] = $eventImg;
     }
 
    // Close connection
@@ -80,14 +81,14 @@ class Event {
  }
 
 
- public function updateEvents($eventid, $tilte, $eventDate, $description, $author) {
+ public function updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg) {
   // Connecting to Database
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
   // prepare and bind
-  $stmt = $mysqli->prepare("UPDATE events SET title=?, event_date=?, description=?, author=? WHERE id=?");
-  $stmt->bind_param("ssssi", $tilte, $eventDate, $description, $author, $eventid);
+  $stmt = $mysqli->prepare("UPDATE events SET title=?, event_date=?, description=?, author=?, event_img=? WHERE id=?");
+  $stmt->bind_param("sssssi", $tilte, $eventDate, $description, $author, $eventImg, $eventid);
   $stmt->execute();
 
   // $stmt->close();

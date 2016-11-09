@@ -177,13 +177,13 @@
 	margin-bottom: 15px;
 }
 .timaskraning-maeting {
-	background-color: $primary-color;
+	background-color: rgba(63,184,175,1);
 }
 .timaskraning-veikindi {
-	background-color: rgba($primary-color, 0.4)
+	background-color: rgba(255, 158, 157,1);
 }
 .timaskraning-leyfi {
-	background-color: rgba($primary-color, 0.1)
+	background-color: rgba(218,216,167,1);
 }
 .timaskraning-nemandi-container {
 	display: flex;
@@ -194,4 +194,7 @@ a.timaskraning-admin-takki {
   appearance: button;
   text-decoration: none;
   color: inital;
+}
+.timaskraning-stok h4 {
+  margin-bottom: 10px;
 }

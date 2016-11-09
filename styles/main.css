@@ -747,15 +747,15 @@ form {
 }
 
 .timaskraning-maeting {
-  background-color: #FFE400;
+  background-color: #3fb8af;
 }
 
 .timaskraning-veikindi {
-  background-color: rgba(255, 228, 0, 0.4);
+  background-color: #ff9e9d;
 }
 
 .timaskraning-leyfi {
-  background-color: rgba(255, 228, 0, 0.1);
+  background-color: #dad8a7;
 }
 
 .timaskraning-nemandi-container {
@@ -775,4 +775,8 @@ a.timaskraning-admin-takki {
           appearance: button;
   text-decoration: none;
   color: inital;
+}
+
+.timaskraning-stok h4 {
+  margin-bottom: 10px;
 }

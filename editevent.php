@@ -32,6 +32,10 @@
 						<label for="update_author">Author</label>
 						<input type="text" class="form-control" name="update_author" value="<?php echo $eventInfo['author']; ?>">
 					</div>
+					<div class="form-group">
+						<label for="update_image">Mynd</label>
+						<input type="text" class="form-control" name="update_image" value="<?php echo $eventInfo['eventImg']; ?>">
+					</div>
 					<input type="hidden" name="update_eventid" value="<?php echo $eventid ?>">
 					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Event">
 				</form>

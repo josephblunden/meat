@@ -15,13 +15,18 @@
 						<input type="text" class="form-control" name="create_event_name" value="">
 					</div>
 					<div class="form-group">
-						<label for="create_event_date">Dagsetnign</label>
+						<label for="create_event_date">Dagsetning</label>
 						<input type="datetime-local" class="form-control" name="create_event_date" value="">
 					</div>
 					<div class="form-group">
 						<label for="create_event_desc">Lýsing á Viðburði</label>
 						<input type="text" class="form-control" name="create_event_desc" value="">
 					</div>
+					<div class="form-group">
+						<label for="create_event_img">Mynd</label>
+						<input type="text" class="form-control" name="create_event_img" value="">
+					</div>
+
 					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Create Event">
 				</form>
 			</div>
