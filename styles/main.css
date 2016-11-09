@@ -669,10 +669,16 @@ textarea:focus {
   width: 100%;
 }
 
+.comment-form-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 textarea {
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #e6e6e6;
+  border-radius: 0px;
+  border: 0px solid #e6e6e6;
   height: 100px;
   padding: 20px;
   font-size: 18px;
@@ -680,14 +686,13 @@ textarea {
 }
 
 button[name="commentSubmit"] {
-  padding: 10px;
-  border-radius: 35px;
-  border: 1px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 0px;
+  border: 0px solid #e6e6e6;
   background-color: #3fb8af;
   font-size: 14px;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  margin-top: -100px;
 }
 
 button[name="commentSubmit"]:hover {
@@ -696,6 +701,38 @@ button[name="commentSubmit"]:hover {
 
 .comment-single-container:nth-of-type(odd) {
   background-color: white;
+}
+
+.comment-stakur-info {
+  width: 50% !important;
+  padding: 20px 0 !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.date-comment, .comment-first-name {
+  font-size: 12px;
+}
+
+.comment-first-name {
+  margin-right: 20px;
+  width: 20%;
+}
+
+.comment-first-name p {
+  font-weight: 700;
+}
+
+.vidburdur-nafn-fyrirsogn {
+  margin: 15px 0 10px 0;
+}
+
+.vidburdur-comment-comment {
+  width: 75%;
 }
 
 .blocker {
@@ -956,6 +993,18 @@ button[name="commentSubmit"]:hover {
   background-color: #dad8a7;
 }
 
+.timaskraning-maeting:hover {
+  background-color: #5cb799;
+}
+
+.timaskraning-veikindi:hover {
+  background-color: #ff6c6a;
+}
+
+.timaskraning-leyfi:hover {
+  background-color: #cbc883;
+}
+
 .timaskraning-nemandi-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1068,4 +1117,25 @@ a.timaskraning-admin-takki:hover {
 
 .kennari-class-1:hover {
   background-color: #ff6c6a;
+}
+
+@media (max-width: 650px) {
+  * {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .menu-vinstri {
+    width: 70%;
+    background-color: black;
+    opacity: 0.7;
+    display: none;
+  }
+  .menu-haegri {
+    width: 100%;
+    background: #3fb8af;
+    position: relative;
+  }
 }

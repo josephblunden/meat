@@ -23,7 +23,7 @@
 	<div class="vidburdur-stakur-info">
 		<?php echo '
 			<img class="vidburdur-stakur-mynd" src="'.$eventInfo['eventImg'].'">
-			<h2>'.$eventInfo['title'].'</h2>
+			<h2 class="vidburdur-nafn-fyrirsogn">'.$eventInfo['title'].'</h2>
 			<h4>'.$eventInfo['eventDate'].'</h4>
 			<p>'.$eventInfo['description'].'</p>
 
@@ -45,7 +45,7 @@
 <div class="vidburdur-stakur-info-container-bakgrunnslaust">
 	<div class="vidburdur-stakur-info">
 		<div class="comment-post">
-			<form method='POST'>
+			<form class="comment-form-form" method='POST'>
 			<input type='hidden' name='date_time' value='".<?php date('d-m-y H:i:s'); ?>."'>
 			<textarea placeholder="Athugasemd við viðburð" name='comments'></textarea><br>
 			<button type='submit' name='commentSubmit'>Comment</button>
@@ -66,23 +66,23 @@
 
 
 <div class="comment-single-container">
-	<div class=".vidburdur-stakur-info-container-bakgrunnslaust">
-	<div>
+	<div class="comment-stakur-info">
+	<div class="comment-first-name">
 		<?php 
 			$userid = $commentArr[$i]['userID'];
                     $user = new User();
                     $userInfo = $user->getUserById($userid);
-                        echo $userInfo['firstname'];
+                        echo '<p class="comment-first-name-name">'.$userInfo['firstname'].'</p>';
 		?>
 
-	</div>
-
-	<div class="date-comment">
-		<?php
+	<?php
 			echo $commentArr[$i]['dateTime']."<br/>";
 		?>
+
 	</div>
-	<p>
+
+	
+	<p class="vidburdur-comment-comment">
 		<?php
 			echo $commentArr[$i]['comments']."<br/>";
 		?>
@@ -96,8 +96,8 @@
 </div>
 
 <?php }?>
-
+<!-- 
 </div>
-</div>
+</div> -->
 
 <?php include('includes/footer.php'); ?>

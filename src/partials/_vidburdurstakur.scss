@@ -32,24 +32,28 @@
 	overflow: hidden;
 	width: 100%;
 }
+.comment-form-form {
+	display: flex;
+}
 textarea {
 	width: 100%;
-	border-radius: 5px;
-	border: 1px solid lighten(gray, 40%);
+	border-radius: 0px;
+	border: 0px solid lighten(gray, 40%);
 	height: 100px;
 	padding: 20px;
 	font-size: 18px;
 	font-family: $font;
 }
 button[name="commentSubmit"] {
-	padding: 10px;
-	border-radius: 35px;
-	border: 1px solid lighten(gray, 40%);
+	padding: 20px;
+	border-radius: 0px;
+	border: 0px solid lighten(gray, 40%);
 	background-color: $primary-color;
 	font-size: 14px;
 	font-family: $font;
 	font-weight: 700;
-	margin-top: -100px;
+	// margin-top: -100px;
+
 }
 button[name="commentSubmit"]:hover {
 	background-color: $secondary-color;
@@ -57,4 +61,26 @@ button[name="commentSubmit"]:hover {
 
 .comment-single-container:nth-of-type(odd) {
 	background-color: white;
+}
+.comment-stakur-info {
+	width: 50% !important;
+	padding: 20px 0 !important;
+	justify-content: center !important;
+	display: flex;
+}
+.date-comment, .comment-first-name {
+	font-size: 12px;
+}
+.comment-first-name {
+	margin-right: 20px;
+	width: 20%;
+}
+.comment-first-name p {
+	font-weight: 700;
+}
+.vidburdur-nafn-fyrirsogn {
+	margin: 15px 0 10px 0;
+}
+.vidburdur-comment-comment {
+	width: 75%;
 }

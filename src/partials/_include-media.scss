@@ -1,0 +1,17 @@
+@media (max-width: 650px) {
+    * {
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+    .menu-vinstri {
+  width: 70%;
+  background-color: black;
+  opacity: 0.7;
+  display: none;
+}
+.menu-haegri {
+  width: 100%;
+  background: $primary-color;
+  position: relative;
+}
+  }
