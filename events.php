@@ -24,12 +24,13 @@
   						<strong>Well done!</strong> You successfully deleted the event.
 						</div>
 					<?php endif; ?>
-					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Title</th> <th>Event Date</th> <th>Description</th><th>author</th></tr> </thead>
-						<tbody>
-							<?php getEvents(); ?>
-						</tbody>
-					</table>
+					<div class="vidburdir-yfirlit-container">
+						<div class="vidburdir-yfirlit">
+							<div class="vidburdir-card-container">
+								<?php getEvents(); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 	</div>
