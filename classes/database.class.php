@@ -23,7 +23,7 @@ class Database {
 	private function __construct() {
 		$this->_connection = new mysqli($this->_host, $this->_username,
 			$this->_password, $this->_database);
-
+			
 		// Error handling
 		if(mysqli_connect_error()) {
 			trigger_error("Failed to connect to MySQL: " . mysqli_connect_error(),

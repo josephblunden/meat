@@ -1,22 +1,15 @@
 <?php
 	include('includes/config.php');
+
 	loginCheck();
 
 	include('includes/header.php');
 
+	//Check if parameter exists and is set to true
 	if(isset($_GET['one']) && $_GET['one']) {
 		$eventid = $_GET['eventid'];
 		$event = new Event();
 		$eventInfo = $event->getEventsById($eventid);
-	}
-
-	if(isset($_GET['update']) && $_GET['update'] == 'true') {
-		//$commentID = $_POST['update_commentID'];
-		$comments = $_POST['update_comments'];
-		//$dateTime = $_POST['update_dateTime'];
-
-		$comment = new Comment();
-		$comment->updateComments($comments, $dateTime, $commentID);
 	}
 
 	//Check if parameter exists and is set to true
@@ -31,29 +24,22 @@
 	<div class="row">
 		<div class="col-md-9 p-a-3">
 			<div class="row">
-				<div class="">
-					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
-						<div class="alert alert-success" role="alert">
-  						<strong>Well done!</strong> You successfully update the event.
-						</div>
-					<?php endif; ?>
 					<?php if(isset($_GET['delete']) && $_GET['delete'] == 'true') : ?>
 						<div class="alert alert-danger" role="alert">
   						<strong>Well done!</strong> You successfully deleted the event.
 						</div>
 					<?php endif; ?>
+			<div class="event-container">
         <h2><?php echo $eventInfo['title']; ?></h2>
         <h3><?php echo $eventInfo['eventDate']; ?></h3>
-        <p>
-            <?php echo $eventInfo['description']; ?>
-        </p>
+        <p><?php echo $eventInfo['description']; ?></p>
         <h3><?php echo $eventInfo['author']; ?></h3>
 			</div>
 		</div>
 		</div>
 	</div>
 </div>
-<div class="">
+<div class="comment-post">
 <form method='POST'>
 		<input type='hidden' name='date_time' value='".<?php date('d-m-y H:i:s'); ?>."'>
 		<textarea name='comments'></textarea><br>
@@ -99,6 +85,5 @@
 <?php }?>
 </div>
 </div>
-
 
 <?php include('includes/footer.php'); ?>
