@@ -48,17 +48,25 @@
 
 		</div>
 	</div>
-	<div class="timaskraning-container">
+		<div class="timaskraning-container">
 			<div class="timaskraning">
 				<div class="row">
 					<div class="">
-	<div class="timaskraning-nemandi-container">
-		<?php getAttendDashboard(); ?>
-	</div>
-</div>
-</div>
-</div>
-</div>
+						<div class="timaskraning-nemandi-container">
+							<?php getAttendDashboard(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="vidburdir-yfirlit-container">
+			<div class="vidburdir-yfirlit">
+				<div class="vidburdir-card-container">
+					<?php getEvents(); ?>
+				</div>
+			</div>
+		</div>
+
 
 	  <!-- Modal HTML embedded directly into document -->
 <!--   <div id="ex1" style="display:none;">
