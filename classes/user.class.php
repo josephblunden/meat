@@ -38,22 +38,29 @@ class User {
       } else {
         $userRole = 'nemandi-class';
       }
-
-      echo '<div class="notendayfirlit-card '.$userRole.'">';
+      if(loginSuperCheck() == true) {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
         echo '
-          <h4>'.$firstname.' '.$lastname.'</h4>
-          <p>'.$email.'</p>
-          <p></p>
-          <p></p>
-          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="studentattendance.php?student=true&userid='.$userid.'">Skoða Mætingu</a>
-          </div>
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="studentattendance.php?student=true&userid='.$userid.'">Mæting</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+            </div>
 
 
-        ';
-      echo '</div>';
+            ';
+        echo '</div>';
+      } else {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
+        echo '
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            ';
+        echo '</div>';
+      }
+
     }
 
  }
@@ -78,20 +85,27 @@ class User {
         $userRole = 'nemandi-class-1';
       }
 
-      echo '<div class="notendayfirlit-card '.$userRole.'">';
+      if(loginSuperCheck() == true) {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
         echo '
-          <h4>'.$firstname.' '.$lastname.'</h4>
-          <p>'.$email.'</p>
-          <p></p>
-          <p></p>
-          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
-          </div>
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+            </div>
 
 
-        ';
-      echo '</div>';
+            ';
+        echo '</div>';
+      } else {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
+        echo '
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            ';
+        echo '</div>';
+      }
     }
 
  }

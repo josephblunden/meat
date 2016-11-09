@@ -38,7 +38,10 @@
 					<?php endif; ?>
 						<div class="timaskraning-nemandi-container">
 							<?php
-								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$_GET['firstname'].'</h3>';
+              $userid = $_GET['userid'];
+              $user = new User();
+              $userInfo = $user->getUserById($userid);
+								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$userInfo['firstname'].'</h3>';
 							?>
 						</div>
 						<div class="timaskraning-nemandi-container">
