@@ -45,7 +45,7 @@
 <div class="vidburdur-stakur-info-container-bakgrunnslaust">
 	<div class="vidburdur-stakur-info">
 		<div class="comment-post">
-			<form method='POST'>
+			<form class="comment-form-form" method='POST'>
 			<input type='hidden' name='date_time' value='".<?php date('d-m-y H:i:s'); ?>."'>
 			<textarea placeholder="Athugasemd við viðburð" name='comments'></textarea><br>
 			<button type='submit' name='commentSubmit'>Comment</button>
