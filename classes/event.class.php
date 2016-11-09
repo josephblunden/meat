@@ -34,12 +34,6 @@ class Event {
        echo '</tr>';
      }
 
-    /**
-      * Close connection
-    */
-    // $stmt->close();
-    // $mysqli->close();
-
   }
  // Get all user info from user table by user_id
  public function getEventsById($eventid) {
