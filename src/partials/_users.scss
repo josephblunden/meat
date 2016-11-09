@@ -7,7 +7,6 @@
 	display: none;
 }
 .users {
-	// width: 50%;
 	padding: 20px 0;
 }
 .users input {
@@ -74,13 +73,6 @@
 .form-control:focus, .form-control:focus + .fa {
   border-color: #10CE88;
   color: #10CE88;
-}
-
-.form-group .fa {
-  // position: absolute;
-  // right: 15px;
-  // top: 17px;
-  // color: #999;
 }
 
 .log-status.wrong-entry {
@@ -177,7 +169,7 @@
 	margin-bottom: 15px;
 }
 .timaskraning-maeting {
-	background-color: rgba(63,184,175,1);
+	background-color: rgba(127,199,175,1);
 }
 .timaskraning-veikindi {
 	background-color: rgba(255, 158, 157,1);
@@ -235,21 +227,21 @@ a.timaskraning-admin-takki:hover {
 
 .notendayfirlit-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between !important;
   background-color: white;
   flex-wrap: wrap !important;
-  width: 32%;
+}
 
 .notendayfirlit {
-  width: 50%;
+  // width: 50%;
   padding: 20px 0;
   flex-wrap: wrap;
   display: flex;
 }
 
 .notendayfirlit-card {
-  background-color: gray;
-  width: 32%;
+  background-color: rgba(127,199,175,1);
+  width: 32% !important;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -258,3 +250,20 @@ a.timaskraning-admin-takki:hover {
   width: 50px;
   height: 50px;
 }
+.notendayfirlit-card:hover {
+  background-image: url(http://placehold.it/300x300);
+  background-size: cover;
+}
+
+
+
+// .notendayfirlit-container {
+//   display: flex;
+//   justify-content: center;
+//   background-color: white;
+// }
+
+// .notendur-yfirlit {
+//   width: 50%;
+//   padding: 20px 0;
+// }

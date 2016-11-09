@@ -30,6 +30,7 @@
 ?>
 
 
+
 <div class="timaskraning-container">
 		<div class="timaskraning">
 			<div class="row">
@@ -47,6 +48,10 @@
 					<!-- <table class="table table-striped">
 						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
 						<tbody> -->
+
+						<div class="timaskraning-nemandi-container">
+							<h3 style="margin-bottom: 20px; margin-top: 10px">Notendur</h3>
+						</div>
 						
 						<div class="notendayfirlit-container">
 							<?php getUsers(); ?>
