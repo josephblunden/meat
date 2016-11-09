@@ -26,7 +26,7 @@ class Attend {
    $mysqli = $db->getConnection();
 
   	// prepare and bind
-  	$stmt = $mysqli->prepare("SELECT id, status, status_time FROM checkin WHERE user_id=$userid");
+  	$stmt = $mysqli->prepare("SELECT id, status, status_time FROM checkin WHERE user_id=$userid ORDER BY status_time DESC");
     $stmt->execute();
     $stmt->bind_result($attendid, $status, $statusTime);
 
