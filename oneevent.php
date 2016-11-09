@@ -31,12 +31,12 @@
 </div>
 <div class="vidburdur-stakur-info-container">
 	<div class="vidburdur-stakur-info">
-		<a class="edit-button-a" href="editevent.php?edit=true&eventid=<?php echo $eventid ?>">
-				<button class="edit-button">Edit</button>
-			</a>
-			<a class="delete-button-a" href="events.php?delete=true&eventid=<?php echo $eventid ?>">
-				<button class="delete-button">Delete</button>
-			</a>
+		<?php if(loginSuperCheck()==true) { echo '    <a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'">
+					<button class="edit-button">Edit</button>
+				</a>
+				<a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'">
+					<button class="delete-button">Delete</button>
+				</a>'; }; ?>
 	</div>
 </div>
 <div class="vidburdur-stakur-info-container-bakgrunnslaust">
@@ -73,9 +73,9 @@
 		?>
 	</p>
 	<div class'buttons buttons-comments'>
-				<a class='delete-button-a' href='oneevent.php?delete=true&commentID=<?php echo $commentArr[$i]['commentID'] ?>&eventid=<?php echo $eventid ?>'>
-					<button class='delete-button'>Delete</button>
-				</a>
+					<?php if(loginSuperCheck()==true) { echo '<a class="delete-button-a" href="oneevent.php?delete=true&commentID='.$commentArr[$i]['commentID'].'&eventid='.$eventid.'">
+					<button class="delete-button delete-comment-button">Delete</button>
+				</a>'; }; ?>
 	</div>
 	</div>
 </div>
