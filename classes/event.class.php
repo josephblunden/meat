@@ -15,7 +15,7 @@ class Event {
    $stmt->execute();
 
    $stmt->close();
-   $mysqli->close();
+  //  $//mysqli->close();
    header('Location: ./dashboard.php');
   }
   public function getAllEvents() {
@@ -29,9 +29,22 @@ class Event {
      $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author, $eventImg);
      while ($stmt->fetch()) {
 
-       echo '<tr>';
-         echo '<th scope="row">' .$eventid. '<td>' .$tilte. '</td> <td>' . $eventDate.'</td><td>' .$description.'</td><td>' .$author.'</td><td><a class="edit-button-a" href="editevent.php?edit=true&eventid='.$eventid.'"><button class="edit-button">Edit</button></i></a><a class="delete-button-a" href="events.php?delete=true&eventid='.$eventid.'"><button class="delete-button">Delete</button></a><a class="one-button-a" href="oneevent.php?one=true&eventid='.$eventid.'"><button class="one-button">Show</button></i></a>';
-       echo '</tr>';
+        echo'<a href="oneevent.php?one=true&eventid='.$eventid.'">
+              <div class="vidburdir-card">
+                <div class="event-content">
+                  <div class="event-title">
+                    '.$tilte.'
+                  </div><br/>
+                  <div class="event-date">
+                    '.$eventDate.'
+                  </div>
+                  <div class="event-description">
+                    '.$description.'
+                  </div>
+                </div>
+              </div>
+            </a>
+       ';
      }
 
   }
@@ -60,7 +73,7 @@ class Event {
 
    // Close connection
    $stmt->close();
-  //  $mysqli->close();
+  //  $//mysqli->close();
    return $eventArr;
  }
 
@@ -76,7 +89,7 @@ class Event {
   $stmt->execute();
 
   // $stmt->close();
-  // $mysqli->close();
+  // $//mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
 
@@ -91,7 +104,7 @@ class Event {
   $stmt->execute();
 
   $stmt->close();
-  //$mysqli->close();
+  //$//mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
 

@@ -1,5 +1,6 @@
 <?php
-	session_start();
+session_start();
+
 include('functions.php');
 include('authentication.php');
 
@@ -11,6 +12,7 @@ function loginCheck() {
     return true;
   }
 }
+//Tjékkar hvort superuser sé skráður inn
 function loginSuperCheck() {
   if($_SESSION['isLoggedin'] == false || $_SESSION['user_role_id'] != 1) {
 

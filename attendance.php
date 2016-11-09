@@ -8,11 +8,9 @@
 	if(isset($_GET['update']) && $_GET['update'] == 'true') {
 		$attendid = $_POST['update_attendid'];
 		$status = $_POST['update_status'];
-    $statusTime = $_POST['update_status_time'];
 
 		$user = new Attend();
-
-		$user->updateAttendance($status, $statusTime, $attendid);
+		$user->updateAttendance($status, $attendid);
 	}
 
 	//Check if parameter exists and is set to true
@@ -43,14 +41,14 @@
 						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
 						<tbody> -->
 						<div class="timaskraning-nemandi-container">
-							<?php 
+							<?php
 								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$_SESSION['firstname'].'</h3>';
 							?>
 						</div>
 						<div class="timaskraning-nemandi-container">
 							<?php getAttend(); ?>
 						</div>
-					
+
 		<!-- 				</tbody>
 					</table> -->
 				</div>

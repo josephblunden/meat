@@ -13,7 +13,7 @@ public function setComments($events_id, $users_id, $date_time, $comments) {
     $stmt->execute();
 
     $stmt->close();
-    //$mysqli->close();
+    //$//mysqli->close();
 
     //header("Location: ./oneevent.php?one=true&eventid='.$events_id.'");
 
@@ -25,7 +25,7 @@ public function getAllComments($eventID){
   $mysqli = $db->getConnection();
 
   error_log($eventID);
-	$stmt = $mysqli->prepare("SELECT users_id, date_time, comments, id FROM comments WHERE events_id = ?");
+	$stmt = $mysqli->prepare("SELECT users_id, date_time, comments, id FROM comments WHERE events_id = ? ORDER BY date_time DESC");
   $stmt->bind_param('i', $eventID);
   $stmt->execute();
   $stmt->bind_result($userID, $dateTime, $comments, $commentID);
@@ -69,7 +69,7 @@ return $commentArr;
 
     // Close connection
     $stmt->close();
-    $mysqli->close();
+    //mysqli->close();
     return $commentArr;
   }
 

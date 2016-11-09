@@ -4,6 +4,19 @@
 	include('includes/header.php');
 
 	$today = date("D, F, Y");
+	//Check if parameter exists and is set to true
+	if(isset($_GET['update']) && $_GET['update'] == 'true') {
+		$eventid = $_POST['update_eventid'];
+		$tilte = $_POST['update_title'];
+		$eventDate = $_POST['update_event_date'];
+		$description = $_POST['update_description'];
+		$author = $_POST['update_author'];
+		$eventImg = $_POST['update_image'];
+
+		$event = new Event();
+		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg);
+	}
+
 ?>
 
 
@@ -34,35 +47,38 @@
 
 						</label>
 					</div>
-					<!-- <input type="submit" class="btn btn-primary btn-lg btn-block" name="Submit" value="Submit"> -->
 				</form>
 				<?php
 				    }
 				    else {
 				        echo "<div class='form-check-svar'>Mæting skráð</div>";
-				 } ?>
-
-
+						
+			}	 ?>
 				 <div id="contactResponse"></div>
 
 
 		</div>
 	</div>
-
-	<div class="timaskraning-yfirlit-container">
-		<div class="timaskraning">
-			<ul class="margin-margin">
-				<li class="timaskraning-yfirlit-faersla">
-					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
-					<p class="timaskraning-yfirlit-haegri timaskraning-maett">Mætt</p>
-				</li>
-				<li class="timaskraning-yfirlit-faersla">
-					<p class="timaskraning-yfirlit-vinstri">Miðvikudagur 21. apríl</p>
-					<p class="timaskraning-yfirlit-haegri timaskraning-leyfi">Í leyfi</p>
-				</li>
-			</ul>
+	<div class="vidburdir-yfirlit-container">
+		<div class="vidburdir-yfirlit">
+			<div class="vidburdir-card-container">
+				<?php getEvents(); ?>
+			</div>
 		</div>
 	</div>
+		<div class="timaskraning-container">
+			<div class="timaskraning">
+				<div class="row">
+					<div class="">
+						<div class="timaskraning-nemandi-container">
+							<?php getAttendDashboard(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 	  <!-- Modal HTML embedded directly into document -->
 <!--   <div id="ex1" style="display:none;">
@@ -72,6 +88,6 @@
   <!-- Link to open the modal -->
 <!--   <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
  -->
-
+<?php  ?>
 
 <?php include('includes/footer.php')  ?>

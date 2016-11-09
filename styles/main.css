@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -57,6 +57,13 @@ table {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  /* blue colors for links too */
+  text-decoration: inherit;
+  /* no underline */
 }
 
 body {
@@ -406,7 +413,6 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: white;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -414,7 +420,7 @@ form {
 
 .vidburdir-yfirlit {
   width: 50%;
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
 }
 
 .vidburdir-card-container {
@@ -428,14 +434,73 @@ form {
       flex-wrap: wrap;
 }
 
+.vidburdir-card-container a {
+  height: 100%;
+  width: 48%;
+}
+
 .vidburdir-card {
   border-radius: 5px;
   border: 1px solid gray;
-  width: 48%;
+  width: 100%;
   margin-top: 20px;
   padding: 15px;
   height: 200px;
   position: relative;
+  background-color: white;
+}
+
+.vidburdir-card:hover {
+  box-shadow: 0px 0px 15px 0px rgba(6, 6, 6, 0.18);
+  border-radius: 5px;
+  position: relative;
+}
+
+.vidburdir-card:after {
+  content: '\A';
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+.vidburdir-card:before {
+  width: 100%;
+  color: #fff;
+  z-index: 1;
+  bottom: 0;
+  padding: 4px 10px;
+  text-align: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.vidburdir-card:hover:after, .vidburdir-card:hover:before {
+  opacity: 1;
+}
+
+.event-title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.25em;
+  margin-bottom: 15px;
+}
+
+.event-date {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.event-description {
+  position: relative;
+  display: inline-block;
 }
 
 .vidburdur-stakur-info-container {

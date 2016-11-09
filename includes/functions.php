@@ -37,7 +37,12 @@ function getEvents() {
 	$alluser = new Event();
 	$alluser->getAllEvents();
 }
-
+function deleteEventAndCommnets($eventID) {
+        $allComments = new Comment();
+        $allComments->deleteCommentByEvents($eventID);
+				$allEvents = new Event();
+        $allEvents->deleteEvent($eventID);
+    }
 
 //---------------------   Attending ---------------------------------
 
@@ -55,14 +60,17 @@ function getAttend() {
 	$alluser = new Attend();
 	$alluser->getAllAttendance($_SESSION['userid']);
 }
-
+function getAttendDashboard() {
+	$alluser = new Attend();
+	$alluser->getAllAttendanceDash($_SESSION['userid']);
+}
 
 
 //---------------------   Comments ---------------------------------
-
+$_POST['todayTimeComment'] = date("j F, Y g:i a");
 if(isset($_POST['commentSubmit'])){
 	$events_id = $_GET['eventid'];
-	$date_time = $_POST['todayTime'];
+	$date_time = $_POST['todayTimeComment'];
 	$comments = $_POST['comments'];
 	$comment = new Comment();
 	$comment->setComments($_GET['eventid'], $_SESSION['userid'], $date_time, $comments);
@@ -75,5 +83,3 @@ if(isset($_POST['commentSubmit'])){
 // 	$allComments->getAllComments($GLOBALS['eventID']);
 // }
 ?>
-
-

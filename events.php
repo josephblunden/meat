@@ -5,24 +5,9 @@
 	include('includes/header.php');
 
 	//Check if parameter exists and is set to true
-	if(isset($_GET['update']) && $_GET['update'] == 'true') {
-		$eventid = $_POST['update_eventid'];
-		$tilte = $_POST['update_title'];
-		$eventDate = $_POST['update_event_date'];
-		$description = $_POST['update_description'];
-		$author = $_POST['update_author'];
-		$eventImg = $_POST['update_image'];
-
-		$event = new Event();
-		$event->updateEvents($eventid, $tilte, $eventDate, $description, $author, $eventImg);
-	}
-
-	//Check if parameter exists and is set to true
 	if(isset($_GET['delete']) && $_GET['delete'] == 'true') {
-		$eventid = $_GET['eventid'];
-
-		$event = new Event();
-		$event->deleteEvent($eventid);
+		$eventID = $_GET['eventid'];
+		deleteEventAndCommnets($eventID);
 	}
 ?>
 <div class="container-fluid">
@@ -39,12 +24,13 @@
   						<strong>Well done!</strong> You successfully deleted the event.
 						</div>
 					<?php endif; ?>
-					<table class="table table-striped">
-						<thead> <tr> <th>#</th> <th>Title</th> <th>Event Date</th> <th>Description</th><th>author</th></tr> </thead>
-						<tbody>
-							<?php getEvents(); ?>
-						</tbody>
-					</table>
+					<div class="vidburdir-yfirlit-container">
+						<div class="vidburdir-yfirlit">
+							<div class="vidburdir-card-container">
+								<?php getEvents(); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 	</div>

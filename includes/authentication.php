@@ -27,7 +27,7 @@ function loginUserCheck($username, $password){
        }
    }
    $stmt->close();
-   $mysqli->close();
+   //mysqli->close();
 }
 
   if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
