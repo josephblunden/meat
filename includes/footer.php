@@ -6,16 +6,19 @@
                 <ul>
                     <li class="ofar"><a class="outer-close toggle-overlay close">LOKA</a>
                     </li>
-                    <li><a href="createuser.php">Stofna notanda</a>
+                    <li><a href="dashboard.php">Dashboard</a>
                     </li>
-                    <li><a href="users.php">Breyta notendum</a>
+                    <li><a href="attendance.php">Mínir tímar</a>
                     </li>
                     <li><a href="createevent.php">Stofna viðburð</a>
                     </li>
                 </ul>
             </nav>
             <nav>
-                <?php if(loginSuperCheck()==true) { echo '<ul><li><a href="attendance.php">Skoða tímaskráningu</li></ul>'; }; ?>
+                <?php if(loginSuperCheck()==true) { echo '<ul>
+                <li><a href="createuser.php">Stofna notanda</li>
+                <li><a href="users.php">Notendur & tímaskráning</li>
+                </ul>'; }; ?>
             </nav>
             <nav class="menu-signout">
                 <ul>
