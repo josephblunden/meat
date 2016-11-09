@@ -3,6 +3,7 @@ class Comment {
   private $_db;
   private $_mysqli;
 
+// makes new comment on an event
 public function setComments($events_id, $users_id, $date_time, $comments) {
 	$db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
@@ -13,24 +14,21 @@ public function setComments($events_id, $users_id, $date_time, $comments) {
     $stmt->execute();
 
     $stmt->close();
-    //$//mysqli->close();
-
-    //header("Location: ./oneevent.php?one=true&eventid='.$events_id.'");
-
 
 }
-
+// Getting all comments from one event
 public function getAllComments($eventID){
   $db = $GLOBALS['gdb'];
   $mysqli = $db->getConnection();
 
-  error_log($eventID);
+  // prepare and bind
 	$stmt = $mysqli->prepare("SELECT users_id, date_time, comments, id FROM comments WHERE events_id = ? ORDER BY date_time DESC");
   $stmt->bind_param('i', $eventID);
   $stmt->execute();
   $stmt->bind_result($userID, $dateTime, $comments, $commentID);
   $commentInfo[] = array();
-$commentArr;
+  $commentArr;
+
   while($stmt->fetch()) {
     error_log("hello ".$comments);
     $commentInfo['userID'] = $userID;
@@ -45,7 +43,7 @@ return $commentArr;
 }
 
 
-// Get all user info from user table by user_id
+// Get all comment info from comment table by comment_id
   public function getCommentsById($commentID) {
     // Connecting to Database
     $db = $GLOBALS['gdb'];
@@ -69,7 +67,7 @@ return $commentArr;
 
     // Close connection
     $stmt->close();
-    //mysqli->close();
+
     return $commentArr;
   }
 
@@ -92,7 +90,7 @@ return $commentArr;
   		$stmt = $mysqli->prepare("DELETE FROM comments WHERE id=?");
       $stmt->bind_param("i", $commentID);
   	  $stmt->execute();
-  		//header("Location: ./.php");
+
   }
 
   // Deleting comments by event id
@@ -103,7 +101,7 @@ return $commentArr;
       $stmt = $mysqli->prepare("DELETE FROM comments WHERE events_id=?");
       $stmt->bind_param("i", $eventID);
       $stmt->execute();
-      //header("Location: ./.php");
+
   }
 }
 
