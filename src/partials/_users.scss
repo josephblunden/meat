@@ -168,6 +168,10 @@
 	border-radius: 5px;
 	margin-bottom: 15px;
 }
+.timaskraning-stok:after {
+  content: "";
+  flex: auto;
+}
 .timaskraning-maeting {
 	background-color: rgba(127,199,175,1);
 }
@@ -258,6 +262,10 @@ $nemendalitur: rgba(127,199,175,1);
   border-radius: 5px;
   margin-bottom: 15px;
   transition: all .5s ease;
+}
+.notendayfirlit-card:after {
+  content: "";
+  flex: auto;
 }
 .notendayfirlit-admin-takki {
   position: relative;
