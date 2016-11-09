@@ -23,8 +23,20 @@ class Event {
     $db = $GLOBALS['gdb'];
     $mysqli = $db->getConnection();
 
+    $sql_select = "SELECT id, title, event_date, description, author, event_img FROM events";
+
+    // prepate with a search query
+    if(isset($_GET['query'])) {
+      $query = $_GET['query'];
+      // changes characters used in html to their equivalents, for example: < to &gt;
+      $query = htmlspecialchars($query);
+      // makes sure nobody uses SQL injection
+    //  $query = $mysqli -> mysql_real_escape_string($query);
+
+      $sql_select = "SELECT id, title, event_date, description, author FROM events WHERE title LIKE '%".$query."%'";
+}
    	// prepare and bind
-   	$stmt = $mysqli->prepare("SELECT id, title, event_date, description, author, event_img FROM events");
+    $stmt = $mysqli->prepare($sql_select);
      $stmt->execute();
      $stmt->bind_result($eventid, $tilte, $eventDate, $description, $author, $eventImg);
      while ($stmt->fetch()) {
@@ -108,6 +120,28 @@ class Event {
   //header('Location: ./users.php?updated=true');
  }
 
+
+public function search() {
+   // Connecting to Database
+   $db = $GLOBALS['gdb'];
+   $mysqli = $db->getConnection();
+
+      // prepare and bind (default without a search query)
+   $sql_select = "SELECT id, title, event_date, description, author FROM events";
+
+   // prepate with a search query
+   if(isset($_GET['query'])) {
+     $query = $_GET['query'];
+     // changes characters used in html to their equivalents, for example: < to &gt;
+     $query = htmlspecialchars($query);
+     // makes sure nobody uses SQL injection
+   //  $query = $mysqli -> mysql_real_escape_string($query);
+
+     $sql_select = "SELECT id, title, event_date, description, author FROM events WHERE title LIKE '%".$query."%'";
+   }
+
  }
+
+}
 
 ?>

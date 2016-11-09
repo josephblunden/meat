@@ -1,7 +1,6 @@
 <?php
 	include('includes/config.php');
 	loginCheck();
-
 	include('includes/header.php');
 
 	//Check if parameter exists and is set to true
@@ -35,5 +34,10 @@
 			</div>
 	</div>
 </div>
+<!-- search -->
+<form action="events.php" method="GET">
+   <input type="text" name="query" />
+   <input type="submit" value="Leita" />
+</form>
 
 <?php include('includes/footer.php')  ?>
