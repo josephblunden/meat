@@ -28,43 +28,25 @@
 				<div class="">
 					<?php if(isset($_GET['updated']) && $_GET['updated'] == 'true') : ?>
 						<div class="alert alert-success" role="alert">
-  						<strong>Well done!</strong> You successfully update the user.
+  						<strong>Well done!</strong> Þú hefur uppfært mætinguna.
 						</div>
 					<?php endif; ?>
 					<?php if(isset($_GET['delete']) && $_GET['delete'] == 'true') : ?>
 						<div class="alert alert-danger" role="alert">
-  						<strong>Well done!</strong> You successfully deleted the user.
+  						<strong>Well done!</strong> Þú hefur eytt mætinguni.
 						</div>
 					<?php endif; ?>
-					<!-- <table class="table table-striped">
-						<thead> <tr> <th>Nemandi</th> <th>Skráning</th> <th>Tímastimpill</th><th>Aðgerðir</th> </tr> </thead>
-						<tbody> -->
 						<div class="timaskraning-nemandi-container">
 							<?php
-								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$_SESSION['firstname'].'</h3>';
+								echo '<h3 style="margin-bottom: 20px; margin-top: 10px;">Nemandi: '.$_GET['firstname'].'</h3>';
 							?>
 						</div>
 						<div class="timaskraning-nemandi-container">
-							<?php getAttend(); ?>
+							<?php getAttendForStudents(); ?>
 						</div>
-
-		<!-- 				</tbody>
-					</table> -->
 				</div>
 			</div>
 	</div>
 </div>
 
-<!-- Modal HTML embedded directly into document -->
-  <div id="ex1" style="display:none;">
-    <p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
-  </div>
-
-   <!-- Link to open the modal -->
-  <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
-
-
-<!-- <div class="">
-					<a class="btn btn-primary btn-sm pull-right" style="float: right;" href="createuser.php">Create User</a>
-				</div> -->
 <?php include('includes/footer.php')  ?>

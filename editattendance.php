@@ -1,13 +1,13 @@
 <?php
 	include('includes/config.php');
-	loginCheck();
+	loginSuperCheck();
 
 	include('includes/header.php');
 
 	if(isset($_GET['edit']) && $_GET['edit'] == 'true') {
 		$attendID = $_GET['attendid'];
-		$userid = $_SESSION['userid'];
-		error_log($_SESSION['userid']);
+		$userid = $_GET['userid'];
+		error_log($_GET['userid']);
 		$attend = new Attend();
 		$attendInfo = $attend->getAttendanceById($userid);
 	};
@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-9 p-a-3">
 			<div class="row">
-				<form action="attendance.php?update=true" method="post">
+				<form action="studentattendance.php?student=true&userid=<?php echo $_GET['userid']; error_log('userID'.$_GET['userid']);?>&update=true" method="post">
 				    <div class="form-check">
 				      <label class="form-check-label">
 				        <input type="radio" class="form-check-input" name="update_status"
