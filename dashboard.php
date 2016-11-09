@@ -40,7 +40,6 @@
 				    else {
 				        echo "<div class='form-check-svar'>Mæting skráð</div>";
 				 } ?>
-
 				 <div id="contactResponse"></div>
 
 

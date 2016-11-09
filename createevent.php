@@ -16,7 +16,7 @@
 					</div>
 					<div class="form-group">
 						<label for="create_event_date">Dagsetning</label>
-						<input type="datetime-local" class="form-control" name="create_event_date" value="">
+						<input type="text" class="form-control" name="create_event_date" value="">
 					</div>
 					<div class="form-group">
 						<label for="create_event_desc">Lýsing á Viðburði</label>
