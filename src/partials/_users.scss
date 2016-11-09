@@ -177,6 +177,18 @@
 .timaskraning-leyfi {
 	background-color: rgba(218,216,167,1);
 }
+
+.timaskraning-maeting:hover {
+  background-color: darken($maetingarlitur, 10%);
+}
+.timaskraning-veikindi:hover {
+  background-color: darken($veikindalitur, 10%);
+}
+.timaskraning-leyfi:hover {
+  background-color: darken($leyfislitur, 10%);
+}
+
+
 .timaskraning-nemandi-container {
 	display: flex;
 	justify-content: space-between;
