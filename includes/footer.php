@@ -16,7 +16,8 @@
 			  <nav>
 			  	<?php if(loginSuperCheck() == true) {
 			    	echo '<ul><li><a href="createuser.php">Stofna notanda</a></li>
-			      <li><a href="users.php">Notendur og tímaskráning</a></li></ul>';} 
+			      <li><a href="users.php">Notendur og tímaskráning</a></li></ul>';
+				} 
 			    ?>
 			  </nav>
 			  <nav class="menu-signout">
