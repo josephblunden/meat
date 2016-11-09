@@ -39,10 +39,43 @@ class User {
         $userRole = '<span class="tag tag-warning">Nemandi</span>';
       }
 
-      echo '<tr>';
-        echo '<th scope="row"><td class="users-profile-picture-td"><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td class="users-name-td">' .$firstname.' '.$lastname. ' </td> <td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
-      echo '</tr>';
+    //   echo '<div>';
+    //     echo '<th scope="row"><td class="users-profile-picture-td"><img src="'.$profilePic.'" alt="profile pic" height="50" width="50"></td> <td class="users-name-td">' .$firstname.' '.$lastname. ' </td> <td>' .$username.'</td><td>' .$email.'</td><td>' .$userRole.'</td><td><a class="edit-button-a" href="edituser.php?edit=true&userid='.$userid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="users.php?delete=true&userid='.$userid.'"><button class="delete-button">Delete</button></a></td>';
+    //   echo '</div>';
+    // }
+
+      echo '<div class="notendayfirlit-card">';
+        echo '
+          <h4>'.$firstname.' '.$lastname.'</h4>
+          <img class="notendayfirlit-img" src="'.$profilePic.'" alt="'.$firstname.'">
+          <p>'.$email.'</p>
+          <p>'.$username.'</p>
+          <p>'.$userRole.'</p>
+          <p></p>
+          <p></p>
+          <div class="timaskraning-stok-takkar">
+          <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
+          <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
+          </div>
+        
+
+        ';
+      echo '</div>';
     }
+
+    //  echo '<div class="timaskraning-stok '.$status.'">';
+    //     echo '
+    //       <h4>'.$statusDay.'</h4>
+    //       <p><span class="timaskraning-bold">'.$status1.'</span></p>
+    //       <p>Skráð klukkan '.$statusTime.'</p>
+    //       <div class="timaskraning-stok-takkar">
+    //       <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
+    //       <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
+    //       </div>
+    //     ';
+    //   echo '</div>';
+
+    // }
 
    /**
      * Close connection
