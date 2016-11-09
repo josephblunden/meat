@@ -3,6 +3,10 @@
 	background-color: white;
 	justify-content: center;
 }
+.vidburdur-stakur-info-container-bakgrunnslaust {
+	display: flex;
+	justify-content: center;
+}
 .vidburdur-stakur-info {
 	width: 50%;
 	padding: 20px 0;
@@ -10,4 +14,47 @@
 }
 .vidburdur-stakur-info img {
 	max-width: 100%;
+}
+
+.vidburdur-stakur-info h2 {
+	width: 100%;
+}
+.comment-vidburdur-container {
+	display: flex;
+	justify-content: center;
+}
+.comment-single-container {
+	display: flex;
+	justify-content: center;
+}
+.vidburdur-stakur-mynd {
+	height: 300px;
+	overflow: hidden;
+	width: 100%;
+}
+textarea {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid lighten(gray, 40%);
+	height: 100px;
+	padding: 20px;
+	font-size: 18px;
+	font-family: $font;
+}
+button[name="commentSubmit"] {
+	padding: 10px;
+	border-radius: 35px;
+	border: 1px solid lighten(gray, 40%);
+	background-color: $primary-color;
+	font-size: 14px;
+	font-family: $font;
+	font-weight: 700;
+	margin-top: -100px;
+}
+button[name="commentSubmit"]:hover {
+	background-color: $secondary-color;
+}
+
+.comment-single-container:nth-of-type(odd) {
+	background-color: white;
 }

@@ -1,6 +1,7 @@
 <?php
 	include('includes/config.php');
-	loginCheck();
+	// loginCheck();
+	loginSuperCheck();
 
 	include('includes/header.php');
 
