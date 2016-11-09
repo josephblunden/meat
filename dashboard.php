@@ -52,7 +52,8 @@
 				    }
 				    else {
 				        echo "<div class='form-check-svar'>Mæting skráð</div>";
-				 } ?>
+						
+			}	 ?>
 				 <div id="contactResponse"></div>
 
 
@@ -87,6 +88,6 @@
   <!-- Link to open the modal -->
 <!--   <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
  -->
-
+<?php  ?>
 
 <?php include('includes/footer.php')  ?>

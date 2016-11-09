@@ -15,7 +15,7 @@ class Event {
    $stmt->execute();
 
    $stmt->close();
-   $mysqli->close();
+  //  $//mysqli->close();
    header('Location: ./dashboard.php');
   }
   public function getAllEvents() {
@@ -73,7 +73,7 @@ class Event {
 
    // Close connection
    $stmt->close();
-  //  $mysqli->close();
+  //  $//mysqli->close();
    return $eventArr;
  }
 
@@ -89,7 +89,7 @@ class Event {
   $stmt->execute();
 
   // $stmt->close();
-  // $mysqli->close();
+  // $//mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
 
@@ -104,7 +104,7 @@ class Event {
   $stmt->execute();
 
   $stmt->close();
-  //$mysqli->close();
+  //$//mysqli->close();
   //header('Location: ./users.php?updated=true');
  }
 

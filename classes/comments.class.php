@@ -13,7 +13,7 @@ public function setComments($events_id, $users_id, $date_time, $comments) {
     $stmt->execute();
 
     $stmt->close();
-    //$mysqli->close();
+    //$//mysqli->close();
 
     //header("Location: ./oneevent.php?one=true&eventid='.$events_id.'");
 
@@ -69,7 +69,7 @@ return $commentArr;
 
     // Close connection
     $stmt->close();
-    $mysqli->close();
+    //mysqli->close();
     return $commentArr;
   }
 
