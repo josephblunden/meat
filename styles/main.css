@@ -858,6 +858,13 @@ a.timaskraning-admin-takki:hover {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.notendayfirlit-admin-takki {
+  position: relative;
+  bottom: 0px;
 }
 
 .notendayfirlit-img {
