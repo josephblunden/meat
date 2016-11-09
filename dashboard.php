@@ -19,7 +19,6 @@
 
 ?>
 
-
 	<div class="timaskraning-container">
 		<div class="timaskraning">
 			<h3><?php echo $today ?></h3>
