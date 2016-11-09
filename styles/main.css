@@ -1106,3 +1106,24 @@ a.timaskraning-admin-takki:hover {
 .kennari-class-1:hover {
   background-color: #ff6c6a;
 }
+
+@media (max-width: 650px) {
+  * {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .menu-vinstri {
+    width: 70%;
+    background-color: black;
+    opacity: 0.7;
+    display: none;
+  }
+  .menu-haegri {
+    width: 100%;
+    background: #3fb8af;
+    position: relative;
+  }
+}
