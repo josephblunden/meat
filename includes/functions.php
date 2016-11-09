@@ -19,6 +19,10 @@ include('./classes/classes.php');
   	$alluser = new User();
   	$alluser->getAllUsers();
   }
+  function getUsers2() {
+  	$alluser = new User();
+  	$alluser->getAllUsers2();
+  }
 //---------------------   Events ---------------------------------
 
 //

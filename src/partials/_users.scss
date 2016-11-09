@@ -223,7 +223,7 @@ a.timaskraning-admin-takki:hover {
 //   flex-wrap: wrap;
 // }
 
-
+$nemendalitur: rgba(127,199,175,1);
 
 .notendayfirlit-container {
   display: flex;
@@ -240,7 +240,7 @@ a.timaskraning-admin-takki:hover {
 }
 
 .notendayfirlit-card {
-  background-color: rgba(127,199,175,1);
+  background-color: $nemendalitur;
   width: 32% !important;
   padding: 10px;
   border-radius: 5px;
@@ -250,16 +250,17 @@ a.timaskraning-admin-takki:hover {
   width: 50px;
   height: 50px;
 }
-.notendayfirlit-card:hover {
-  background-image: url(http://placehold.it/300x300);
-  background-size: cover;
-}
+// .notendayfirlit-card:hover {
+//   background-image: url(http://placehold.it/300x300);
+//   background-size: cover;
+// }
 .notendayfirlit-card p {
   font-size: 14px;
   margin-top: 2px;
 }
 
 
+$kennaralitur: rgba(255, 158, 157,1);
 
 // .notendayfirlit-container {
 //   display: flex;
@@ -271,3 +272,19 @@ a.timaskraning-admin-takki:hover {
 //   width: 50%;
 //   padding: 20px 0;
 // }
+.kennari-class {
+  display: none;
+}
+.nemandi-class:hover {
+  background-color: darken($nemendalitur, 10%);
+}
+.nemandi-class-1 {
+  display: none;
+}
+.kennari-class-1 {
+  background-color: $kennaralitur;
+}
+.kennari-class-1:hover {
+  background-color: darken($kennaralitur, 10%);
+}
+

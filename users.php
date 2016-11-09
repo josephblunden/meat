@@ -62,7 +62,7 @@
 						</div>
 						
 						<div class="notendayfirlit-container">
-							<?php getUsers(); ?>
+							<?php getUsers2(); ?>
 						</div>
 					
 		<!-- 				</tbody>
