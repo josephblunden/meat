@@ -15,6 +15,13 @@
                 </ul>
             </nav>
             <nav>
+                <?php if(loginSuperCheck()==false) {
+                    echo '<ul>
+                <li><a href="users.php">Notendur</li>
+                </ul>';
+                    };  ?>
+            </nav>
+            <nav>
                 <?php if(loginSuperCheck()==true) { echo '<ul>
                 <li><a href="createuser.php">Stofna notanda</li>
                 <li><a href="users.php">Notendur & tímaskráning</li>
