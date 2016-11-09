@@ -55,10 +55,11 @@ class Attend {
       //   echo '<td>' .$_SESSION['firstname'].'</td><td>' .$status. '</td> <td>' . $statusTime.'</td><td><a class="edit-button-a" href="editattendance.php?edit=true&attendid='.$attendid.'"><button class="edit-button">Edit</button></a><a class="delete-button-a" href="attendance.php?delete=true&attendid='.$attendid.'"><button class="delete-button">Delete</button></a></td>';
       // echo '</tr>';
 
+
       echo '<div class="timaskraning-stok '.$status.'">';
         echo '
+          <h4>'.$statusDay.'</h4>
           <p>'.$statusTime.'</p>
-          <p>'.$_SESSION['firstname'].'</p>
           <p>'.$status1.'</p>
           <a class="timaskraning-admin-takki" href="editattendance.php?edit=true&attendid='.$attendid.'">Breyta</a>
           <a class="timaskraning-admin-takki" href="attendance.php?delete=true&attendid='.$attendid.'">Eyða</a>
