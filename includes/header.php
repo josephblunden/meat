@@ -12,7 +12,7 @@
   <?php date_default_timezone_set('Iceland'); ?>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/jquery.modal.js"></script>
   <script src="js/moment.js"></script>
@@ -23,7 +23,7 @@
 
 <body>
 
-
+<!-- Headerinn -->
 <?php
   if (!stripos($_SERVER['REQUEST_URI'], 'login.php')) {
     echo '<div class="header sticky fixed">

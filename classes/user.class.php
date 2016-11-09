@@ -1,9 +1,10 @@
 <?php
-
+// creating User class
 class User {
  private $_db;
  private $_mysqli;
 
+//Creating users
  public function createUsers($username, $password, $email, $firstname, $lastname, $profilePic, $userRole) {
  	// Connecting to Database
   $db = $GLOBALS['gdb'];
@@ -19,7 +20,7 @@ class User {
  	//mysqli->close();
   header('Location: ./dashboard.php');
  }
-
+//Getting all users for students
  public function getAllUsers() {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
@@ -33,32 +34,41 @@ class User {
 
     //var_dump($stmt);
     while ($stmt->fetch()) {
+
       if($userRole === 1) {
         $userRole = 'kennari-class';
       } else {
         $userRole = 'nemandi-class';
       }
-
-      echo '<div class="notendayfirlit-card '.$userRole.'">';
+      // if superuser than display
+      if(loginSuperCheck() == true) {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
         echo '
-          <h4>'.$firstname.' '.$lastname.'</h4>
-          <p>'.$email.'</p>
-          <p></p>
-          <p></p>
-          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="studentattendance.php?student=true&userid='.$userid.'">Skoða Mætingu</a>
-          </div>
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="studentattendance.php?student=true&userid='.$userid.'">Mæting</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+            </div>
 
 
-        ';
-      echo '</div>';
+            ';
+        echo '</div>';
+      } else {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
+        echo '
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            ';
+        echo '</div>';
+      }
+
     }
 
  }
 
-
+// getting all users for teachers
  public function getAllUsers2() {
    // Connecting to Database
    $db = $GLOBALS['gdb'];
@@ -69,7 +79,6 @@ class User {
     $stmt->execute();
     $stmt->bind_result($userid, $firstname, $lastname, $username, $email, $userRole, $profilePic);
 
-
     //var_dump($stmt);
     while ($stmt->fetch()) {
       if($userRole === 1) {
@@ -78,26 +87,31 @@ class User {
         $userRole = 'nemandi-class-1';
       }
 
-      echo '<div class="notendayfirlit-card '.$userRole.'">';
+      // if superuser than display
+      if(loginSuperCheck() == true) {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
         echo '
-          <h4>'.$firstname.' '.$lastname.'</h4>
-          <p>'.$email.'</p>
-          <p></p>
-          <p></p>
-          <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
-          <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
-          </div>
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            <div class="timaskraning-stok-takkar notendayfirlit-stok-takkar">
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="edituser.php?edit=true&userid='.$userid.'">Breyta</a>
+            <a class="timaskraning-admin-takki notendayfirlit-admin-takki" href="users.php?delete=true&userid='.$userid.'">Eyða</a>
+            </div>
 
 
-        ';
-      echo '</div>';
+            ';
+        echo '</div>';
+      } else {
+        echo '<div class="notendayfirlit-card '.$userRole.'">';
+        echo '
+            <h4>'.$firstname.' '.$lastname.'</h4>
+            <p>'.$email.'</p>
+            ';
+        echo '</div>';
+      }
     }
 
  }
-
-
-
 
 // Get all user info from user table by user_id
 public function getUserById($userid) {
@@ -129,7 +143,7 @@ public function getUserById($userid) {
   //mysqli->close();
   return $userArr;
 }
-
+// uppdate users
 public function updateUser($firstname, $lastname, $username, $password, $email, $userRole, $profilePic, $userid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
@@ -139,13 +153,9 @@ public function updateUser($firstname, $lastname, $username, $password, $email, 
  $stmt = $mysqli->prepare("UPDATE users SET firstname=?, lastname=?, username=?, password=?, email=?, user_role_id=?, profile_pic=? WHERE id=?");
  $stmt->bind_param("sssssisi", $firstname, $lastname, $username, $password, $email, $userRole, $profilePic, $userid);
  $stmt->execute();
-
- // $stmt->close();
- // $//mysqli->close();
- // unset($mysqli);
- //header('Location: ./users.php?updated=true');
 }
 
+// Deleting users
 public function deleteUser($userid) {
  // Connecting to Database
  $db = $GLOBALS['gdb'];
@@ -157,8 +167,6 @@ public function deleteUser($userid) {
  $stmt->execute();
 
  $stmt->close();
- //$//mysqli->close();
- //header('Location: ./users.php?updated=true');
 }
 
 }
